@@ -1,0 +1,49 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'github.com/ncb000gt/node.bcrypt.js/' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of /Users/sahasd/Desktop/website/package.json
+5 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/bcrypt/package.json
+6 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/body-parser/package.json
+7 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/cookie-parser/package.json
+8 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/debug/package.json
+9 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/ejs/package.json
+10 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/express/package.json
+11 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/express-session/package.json
+12 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/jade/package.json
+13 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/mongoose/package.json
+14 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/morgan/package.json
+15 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/passport/package.json
+16 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/passport-local/package.json
+17 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/request/package.json
+18 verbose installManyTop reading scoped package data from /Users/sahasd/Desktop/website/node_modules/serve-favicon/package.json
+19 info package.json passport@0.3.2 No README data
+20 info package.json passport-local@1.0.0 No license field.
+21 verbose readDependencies loading dependencies from /Users/sahasd/Desktop/website/package.json
+22 silly cache add args [ 'github.com/ncb000gt/node.bcrypt.js/', null ]
+23 verbose cache add spec github.com/ncb000gt/node.bcrypt.js/
+24 silly cache add parsed spec { raw: 'github.com/ncb000gt/node.bcrypt.js/',
+24 silly cache add   scope: null,
+24 silly cache add   name: null,
+24 silly cache add   rawSpec: 'github.com/ncb000gt/node.bcrypt.js/',
+24 silly cache add   spec: '/Users/sahasd/Desktop/website/bin/github.com/ncb000gt/node.bcrypt.js',
+24 silly cache add   type: 'local' }
+25 error addLocal Could not install /Users/sahasd/Desktop/website/bin/github.com/ncb000gt/node.bcrypt.js
+26 verbose stack Error: ENOENT, open '/Users/sahasd/Desktop/website/bin/github.com/ncb000gt/node.bcrypt.js'
+26 verbose stack     at Error (native)
+27 verbose cwd /Users/sahasd/Desktop/website/bin
+28 error Darwin 15.3.0
+29 error argv "node" "/usr/local/bin/npm" "install" "--save" "github.com/ncb000gt/node.bcrypt.js/"
+30 error node v0.12.7
+31 error npm  v2.11.3
+32 error path /Users/sahasd/Desktop/website/bin/github.com/ncb000gt/node.bcrypt.js
+33 error code ENOENT
+34 error errno -2
+35 error enoent ENOENT, open '/Users/sahasd/Desktop/website/bin/github.com/ncb000gt/node.bcrypt.js'
+35 error enoent This is most likely not a problem with npm itself
+35 error enoent and is related to npm not being able to find a file.
+36 verbose exit [ -2, true ]

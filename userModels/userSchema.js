@@ -2,21 +2,20 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 var Schema = mongoose.Schema; 
-var url = '127.0.0.1:27017/' + process.env.OPENSHIFT_APP_NAME;
 
-if (process.env.OPENSHIFT_MONGODB_DB_URL) {
-    url = process.env.OPENSHIFT_MONGODB_DB_URL +
-    process.env.OPENSHIFT_APP_NAME;
+var connection_string = '127.0.0.1:27017/website';
+// if OPENSHIFT env variables are present, use the available connection info:
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+  process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+  process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+  process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+  process.env.OPENSHIFT_APP_NAME;
+  mongoose.connect(connection_string); 
 }
-var connect = function () {
-    mongoose.connect(url);
-};
-connect();
-var db = mongoose.connection;
-db.on('error', function(error){
-    console.log("Error loading the db - "+ error);
-});
-db.on('disconnected', connect);
+else {
+    mongoose.connect('mongodb://localhost/users'); 
+}
 
 var UserSchema = new Schema ({
     username: { type: String, required: true, index: { unique: true } },

@@ -1,113 +1,229 @@
 <html>
+<head>
+  <!--<script src="react.js"></script>
+  <script src="react-dom.js"></script>
+  <script src="registration.js"></script> -->
+  <script type="text/javascript">
+    function validateForm(form) {
+      console.log("im here!");
+    var first = document.forms["myForm"]["fname"].value;
+    var uname = document.forms["myForm"]["uname"].value;
+    var password = document.forms["myForm"]["pass"].value;
+    var last = document.forms["myForm"]["lname"].value;
+    var studentd = document.forms["myForm"]["sid"].value;
+    var email = document.forms["myForm"]["em"].value;
+    var gender = document.forms["myForm"]["mf"].value;
+    var bday = document.forms["myForm"]["bday"].value;
+    var grad = document.forms["myForm"]["gday"].value;
+    var bday = document.forms["myForm"]["bday"].value;
+    var status = document.forms["myForm"]["stat"].value;
+    var cell = document.forms["myForm"]["cnum"].value;
+    var text = document.forms["myForm"]["text"].value;
+    var tshirt = document.forms["myForm"]["shirt"].value;
+    var bday = document.forms["myForm"]["bday"].value;
+    var pfirst = document.forms["myForm"]["pfn"].value;
+    var plast = document.forms["myForm"]["pln"].value;
+    var relation = document.forms["myForm"]["r"].value;
+    var pemail = document.forms["myForm"]["pm"].value;
+    var pphone = document.forms["myForm"]["hp"].value;
+    var pupdate = document.forms["myForm"]["udate"].value;
+    var address = document.forms["myForm"]["addr"].value;
+    var zip = document.forms["myForm"]["zcode"].value;
+    console.log(tshirt);
+
+    if(gender.toLowerCase() != "m" && !gender.toLowerCase() != "f" && gender.toLowerCase() != "other")
+    {
+      alert("gender");
+      return false;
+    }
+
+    if(grad < 2017 || grad > 2050) //any grad year up to 2050
+    {
+      alert("Please enter a valid graduation year.");
+      return false;
+    }
+
+    if(text.toLowerCase() != "y" && text.toLowerCase() != "n")
+    {
+      alert("Not a valid update response!");
+      return false;
+    }
+
+    if(tshirt.toLowerCase() != "xs" && tshirt.toLowerCase() && "s" && tshirt.toLowerCase() != "m" && tshirt.toLowerCase() != "l" && tshirt.toLowerCase() != "xl")
+    {
+      alert("Not a valid shirt size!");
+      return false;
+    }
+
+    
+
+    if(pupdate.toLowerCase() != "y" && pupdate.toLowerCase() != "n")
+    {
+      alert("Not a valid parent update response!");
+      return false;
+    }
+
+    
+
+     /*if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(bday))
+     {
+        alert("Please enter birthday in the form of mm/dd/yyyy");
+        return false;
+     }*/
+
+    // Parse the date parts to integers
+    /*
+    var parts = bday.split("/");
+    var day = parseInt(parts[1], 10);
+    var month = parseInt(parts[0], 10);
+    var year = parseInt(parts[2], 10);
+    console.log("hello again");
+
+    // Check the ranges of month and year
+    console.log(year)
+    console.log(year < 1000 || year > 3000 || month == 0 || month > 12)
+    if(!year < 1000 || !year > 3000 || !month == 0 || !month > 12)
+    {
+        alert("invalid year!")
+        return false;
+    }
+    console.log("passed year")
+    var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+    // Adjust for leap years
+    if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+    {
+        monthLength[1] = 29;
+    }
+
+    // Check the range of the day
+    if(day > 0 && day <= monthLength[month - 1])
+    {
+      alert("Please enter birthday in the form of mm/dd/yyyy");
+      return false;
+    }
+    */
+    
+    console.log("goes to end")
+return true;
+
+}
+
+  </script>
+
+</head>
+
   <body>
-    <form action="/register" method="post">
+  <div>
+    <form name="myForm" onsubmit="return validateForm(this)" action="/register" method="POST">
       <div>
         <label>username</label>
-        <input type="text" name="uname" />
+        <input type="text" name="uname" required/>
         <br/>
       </div>
       <div>
         <label>password</label>
-        <input type="password" name="pass" />
+        <input type="password" name="pass" required/>
       </div>
       <div>
         <label>first name</label>
-        <input type="text" name="fname" />
+        <input type="text" name="fname" required/>
         <br/>
       </div>
       <div>
         <label>last name</label>
-        <input type="text" name="lname" />
+        <input type="text" name="lname" required/>
         <br/>
       </div>
       <div>
         <label>student id</label>
-        <input type="text" name="sid" />
+        <input type="number" pattern="[0-9]*" maxlength="7" name="sid" required/>
         <br/>
       </div>
       <div>
         <label>email</label>
-        <input type="text" name="em" />
+        <input type="email" name="em" required/>
         <br/>
       </div>
       <div>
         <label>gender</label>
-        <input type="text" name="mf" />
+        <input type="text" name="mf" required/>
         <br/>
       </div>
       <div>
         <label>birthday</label>
-        <input type="text" name="bday" />
+        <input type="date" name="bday" required/>
         <br/>
       </div>
       <div>
         <label>graduation year</label>
-        <input type="text" name="gday" />
+        <input type="number" name="gday" pattern="[0-9]*" required/>
         <br/>
       </div>
       <div>
         <label>Membership status</label>
-        <input type="text" name="stat" />
+        <input type="text" name="stat" required/>
         <br/>
       </div>
       <div>
         <label>cellphone number</label>
-        <input type="text" name="cnum" />
+        <input type="tel" name="cnum" required/>
         <br/>
       </div>
       <div>
-        <label>Can you text</label>
-        <input type="text" name="text" />
+        <label>Can you text (Y/N)</label>
+        <input type="text" name="text" required/>
         <br/>
       </div>
       <div>
-        <label>T-shirt size</label>
-        <input type="text" name="shirt" />
+        <label>T-shirt size (XS, S, M, L, or XL)</label>
+        <input type="text" name="shirt" required/>
         <br/>
       </div>
       <div>
         <label>Parent's first name</label>
-        <input type="text" name="pfn" />
+        <input type="text" name="pfn" required/>
         <br/>
       </div>
       <div>
         <label>Parent's last name</label>
-        <input type="text" name="pln" />
+        <input type="text" name="pln" required/>
         <br/>
       </div>
       <div>
         <label>Relationship to student</label>
-        <input type="text" name="r" />
+        <input type="text" name="r" required/>
         <br/>
       </div>
       <div>
         <label>Parent's email</label>
-        <input type="text" name="pm" />
+        <input type="email" name="pm" required/>
         <br/>
       </div>
       <div>
         <label>Parent's phone</label>
-        <input type="text" name="hp" />
+        <input type="tel" name="hp" required/>
         <br/>
       </div>
       <div>
         <label>Would your parent's like updates also</label>
-        <input type="text" name="udate" />
+        <input type="text" name="udate" required/>
         <br/>
       </div>
       <div>
         <label>Home address</label>
-        <input type="text" name="addr" />
+        <input type="text" name="addr" required/>
         <br/>
       </div>
       <div>
         <label>Zip code </label>
-        <input type="text" name="zcode" />
+        <input type="number" pattern="[0-9]*" maxlength="5" min="0" name="zcode" required/>
         <br/>
       </div>
       <div>
-        <a href="/login"> <input type="submit" value="Submit"/> </a>
+        <input type="submit" value="submit"/>
       </div>
+    </div>
     </form>
   </body>
 </html>

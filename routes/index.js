@@ -20,12 +20,7 @@ router.get('/', isAuth, function atHome (req, res, next) {
 
 //login web page route
 router.get('/login', function atLogin (req, res, next) {
-  if (req.user) {
-    res.redirect('/')
-  }
-  else {
   	res.render('login');
-  }
 });
 
 //login verification route

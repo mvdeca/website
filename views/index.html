@@ -1,46 +1,69 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>MVDECA</title>
+    <title>MVDECA</title>
 
-        <meta name="description" content="MVDECA">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MVDECA">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="css/video.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/values.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen" />
 
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500" rel="stylesheet">
+  </head>
 
-        <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700,100' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,100' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-   		<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500" rel="stylesheet">
-    </head>
-
-    <body style = "margin:0">
-        <div class="splash">
-            <div class="panel">
-                <video autoplay loop class="splash-video" poster="assets/splash-poster.jpg">
-                    <source src="assets/videos/splash.webm" type="video/webm">
-                    <source src="assets/videos/splash.mp4" type="video/mp4">
-                </video>
-                <div class="splash-panel-image logo" style="width:80%;margin:0 10%;">
-                    <img src="images/deca-text-logo.svg" align="middle" style="margin: -35% -50%; width:75%;">
-                </div> 
-                <div class="splash-panel-image subtitle" style="margin: 10% 3%">
-                    <p style="font-size: 3.5vw"> More than Just a Club</p>
-                </div>
+  <body>
+  <section id="section-header" class="vertical-center">
+    <video autoplay loop muted poster="screenshot.jpg" id="background-vid">
+      <source src="assets/videos/splash.webm" type="video/webm">
+      <source src="assets/videos/splash.mp4" type="video/mp4">
+    </video>
+    <div id="header-content" class="section-content">
+      <img id="header-img" src="images/deca-text-logo.svg" alt="MVDECA" />
+      <h1>MORE THAN JUST A CLUB</h1>
+    </div>
+  </section>
+  <section id="section-main">
+    <div id="img-container">
+      <img id="content-img1" class="content-img" src="images/competitions.jpg"/>
+      <img id="content-img2" class="content-img" src="images/culture.jpg"/>
+      <img id="content-img3" class="content-img" src="images/community.jpg"/>
+    </div>
+    <div class="content-container">
+        <div id="content1" class="content valign-wrapper">
+            <div class="valign content-text">
+                <h3>Competitions</h3>
+                <p>The MVDECA competitions program trains our members by perfecting their presentation and writing skills. Every year, we attend four conferences that allow members to gain honors and awards in both written plan events and roleplay events. These events provide valuable industry exposure to members that will prove to be priceless as they venture into the real business world further on in life. Members of DECA can utilize their skills in and out of the classroom; they stand out as more confident, innovative, and successful because of their experiences from DECA. Simply put, DECA teaches members how to market themselves, whether it be to teachers, colleges, or employers.</p>
             </div>
-       </div>
-
-       <div class="container">
-            <div class="left_side"></div>
-            <div class="right_side"></div>
         </div>
-        
-    </body>
+        <div id="content2" class="content valign-wrapper">
+            <div class="valign content-text">
+                <h3>Culture</h3>
+                <p>Monta Vista DECA has a place for everyone: from the huge variety of events to the sheer size of the organization, every student finds an event of interest and builds lasting friendships, which are crucial to a memorable high school experience. Although having such a large amount of members may sound intimidating and impersonal, DECA becomes a comfort zone where members have the freedom and the opportunity to grow and improve with one another. For members, MVDECA quickly becomes a diverse family of opportunity and success.</p>
+            </div>
+        </div>
+        <div id="content3" class="content valign-wrapper">
+            <div class="valign content-text">
+                <h3>Community</h3>
+                <p>DECA provides members with a chance to be a part of their community by offering a variety of internship and volunteering opportunities. </p>
+
+                <p>Through the various volunteering opportunities, members are able to gain volunteer hours as well as give back to their community. Internships at companies like State Farm and Lending Tree allow students to apply their knowledge in a real-world environment and acquire additional knowledge and skills..</p>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="section-test">
+      
+  </section>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+  <script src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
 </html>
 
  

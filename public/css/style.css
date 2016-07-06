@@ -94,8 +94,17 @@ h1 {
     display: none;
 }
 
+.content-header {
+    font-weight: 600;
+}
+
 .content-text {
+    color: #888888;
     padding: 3vw;
+}
+
+.content-text p {
+    font-size: 1.2em;
 }
 
 @media (max-width: 900px) {
@@ -115,5 +124,8 @@ h1 {
     .content-container {
         left: 0%;
         width: 100%;
+    }
+    .content-text {
+        text-align: center;
     }
 }

@@ -78,7 +78,7 @@ h1 {
     position: absolute;
     left: 65%;
     width: 35%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 #img-container {  
@@ -99,11 +99,12 @@ h1 {
 }
 
 .content-text {
-    color: #888888;
+    color: #666666;
     padding: 3vw;
 }
 
 .content-text p {
+    color: #444444;
     font-size: 1.2em;
 }
 

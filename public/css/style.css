@@ -32,6 +32,16 @@ section {
 
 .section-content {
   width: 100%;
+  color: #fff;
+  font-family: "Raleway";
+  font-size: 4.2vw;
+  font-weight: 300;
+  left: 0;
+  letter-spacing: 7px;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 #section-main {
@@ -50,7 +60,7 @@ h1 {
 }
 
 #header-img {
-    max-width: 75%;
+    max-width: 55%;
     display: block;
     margin: auto;
 }
@@ -66,8 +76,8 @@ h1 {
 .content-container {
     z-index: 10;
     position: absolute;
-    left: 10%;
-    width: 30%;
+    left: 65%;
+    width: 35%;
     background-color: rgba(255, 255, 255, 0.7);
 }
 

@@ -6,9 +6,9 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group" fill="#FFFFFF">
-            <text id="MVDECA" font-family="Roboto, sans-serif" font-size="305.678219" letter-spacing="0">
-                <tspan x="616.900672" y="260.781518" font-weight="800" >MV</tspan>
-                <tspan x="1103.28803" y="260.781518" font-weight="100" font-style="condensed">DECA</tspan>
+            <text id="MVDECA" font-family="GothamMedium, Gotham Medium" font-size="305.678219" font-weight="normal" letter-spacing="-4.0999999">
+                <tspan x="616.900672" y="260.781518">MV</tspan>
+                <tspan x="1103.28803" y="260.781518" font-family="GothamThin, Gotham Thin" font-style="condensed">DECA</tspan>
             </text>
             <g id="deca-logo-white">
                 <g id="Page-1">

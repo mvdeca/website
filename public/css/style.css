@@ -60,7 +60,7 @@ h1 {
 }
 
 #header-img {
-    max-width: 55%;
+    width: 55%;
     display: block;
     margin: auto;
 }
@@ -90,10 +90,30 @@ h1 {
 .content-img {
     position: absolute;
     height: 100vh;
-    width: 100vw;
+    min-width: 100vw;
     display: none;
 }
 
 .content-text {
     padding: 3vw;
+}
+
+@media (max-width: 900px) {
+    #header-img {
+        width: 75%;
+    }
+    .content-container {
+        left: 50%;
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    #header-img {
+        width: 90%;
+    }
+    .content-container {
+        left: 0%;
+        width: 100%;
+    }
 }

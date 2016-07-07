@@ -3,7 +3,7 @@ html, body {
     margin: 0px;
 }
 
-html {
+html, body {
     overflow-x: hidden;
 }
 
@@ -82,6 +82,7 @@ h1 {
 }
 
 #img-container {  
+    background-color: red;
     position: absolute;
     height: 100%;
     vertical-align: top;
@@ -91,7 +92,6 @@ h1 {
     position: absolute;
     height: 100vh;
     min-width: 100vw;
-    display: none;
 }
 
 .content-header {
@@ -107,14 +107,24 @@ h1 {
     color: #444444;
     font-size: 1.2em;
 }
-
-@media (max-width: 900px) {
+@media (min-width: 1025px) {
+    .content-img {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
     #header-img {
         width: 75%;
     }
     .content-container {
         left: 50%;
         width: 50%;
+    }
+    #content-img2 {
+        top: 100vh;
+    }
+    #content-img3 {
+        top: 200vh;
     }
 }
 
@@ -125,8 +135,12 @@ h1 {
     .content-container {
         left: 0%;
         width: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
     }
     .content-text {
         text-align: center;
+    }
+    .content-text p {
+        color: black;
     }
 }

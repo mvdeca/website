@@ -1,0 +1,17 @@
+{
+  "name": "website",
+  "description": "",
+  "main": "./bin/www",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mvdeca/website",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

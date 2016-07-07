@@ -1,20 +1,56 @@
 <html>
 <head>
-  <!--<script src="react.js"></script>
-  <script src="react-dom.js"></script>
-  <script src="registration.js"></script> -->
+  <!--<script src="react.js"></script>-->
+    <script src="jquery-3.0.0.js"></script>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+  <script src="
+http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
   <script type="text/javascript">
-    function validateForm(form) {
-      console.log("im here!");
+ window.onload=function(){
+  $("#validForm").validate();
+  $("#validForm").on('blur', function() {
+    if (!($(this).valid())) {
+        alert("Invalid");
+        $(this).focus(); // Does not work in FF 
+    }
+});
+
+    var f = document.getElementById("validForm");
+    f.addEventListener("blur", blurFunction, true);
+    //f.addEventListener("focus", focusFunction, true);
+  }
+
+
+  function focusFunction() {
+    $("#validForm").validate();
+  }
+
+  function blurFunction() {
+    $("#validForm").validate();
+     $('*').blur(function(){
+         if(!$(this).valid()){
+             $(this).focus();
+             return false;
+         }
+     });
+  }
+
+  
+  
+
+
+  function validateForm(form) {
+    console.log("im here!");
     var first = document.forms["myForm"]["fname"].value;
     var uname = document.forms["myForm"]["uname"].value;
     var password = document.forms["myForm"]["pass"].value;
     var last = document.forms["myForm"]["lname"].value;
-    var studentd = document.forms["myForm"]["sid"].value;
+    var studentId = parseInt(document.forms["myForm"]["sid"].value);
     var email = document.forms["myForm"]["em"].value;
-    var gender = document.forms["myForm"]["mf"].value;
+    var gender = document.forms["myForm"]["gender"].value;
     var bday = document.forms["myForm"]["bday"].value;
-    var grad = document.forms["myForm"]["gday"].value;
+    var grad = parseInt(document.forms["myForm"]["gday"].value);
     var bday = document.forms["myForm"]["bday"].value;
     var status = document.forms["myForm"]["stat"].value;
     var cell = document.forms["myForm"]["cnum"].value;
@@ -28,22 +64,33 @@
     var pphone = document.forms["myForm"]["hp"].value;
     var pupdate = document.forms["myForm"]["udate"].value;
     var address = document.forms["myForm"]["addr"].value;
-    var zip = document.forms["myForm"]["zcode"].value;
+    var zip = parseInt(document.forms["myForm"]["zcode"].value);
     console.log(tshirt);
 
-    if(gender.toLowerCase() != "m" && !gender.toLowerCase() != "f" && gender.toLowerCase() != "other")
+   /* if(gender.toLowerCase() != "m" && !gender.toLowerCase() != "f" && gender.toLowerCase() != "other")
     {
       alert("gender");
       return false;
+    }*/
+    console.log(studentId);
+    console.log(zip);
+    console.log(grad);
+    if(studentId == NaN)
+    {
+      alert("Please enter valid ID.");
+      return false;
     }
 
-    if(grad < 2017 || grad > 2050) //any grad year up to 2050
+
+    if(grad == NaN || grad < 2017 || grad > 2050) //any grad year up to 2050
     {
       alert("Please enter a valid graduation year.");
       return false;
     }
 
-    if(text.toLowerCase() != "y" && text.toLowerCase() != "n")
+
+
+    /*if(text.toLowerCase() != "y" && text.toLowerCase() != "n")
     {
       alert("Not a valid update response!");
       return false;
@@ -61,7 +108,7 @@
     {
       alert("Not a valid parent update response!");
       return false;
-    }
+    }*/
 
     
 
@@ -103,11 +150,15 @@
       return false;
     }
     */
+    if(zip == NaN)
+    {
+      alert("Please enter valid ID.");
+      return false;
+    }
     
-    console.log("goes to end")
-return true;
-
-}
+    console.log("goes to end");
+    return true;
+  }
 
   </script>
 
@@ -115,7 +166,7 @@ return true;
 
   <body>
   <div>
-    <form name="myForm" onsubmit="return validateForm(this)" action="/register" method="POST">
+    <form name="myForm" id="validForm" onsubmit="return validateForm(this)" action="/register" method="POST" class="pure-form pure-form-stacked">
       <div>
         <label>username</label>
         <input type="text" name="uname" required/>
@@ -137,7 +188,7 @@ return true;
       </div>
       <div>
         <label>student id</label>
-        <input type="number" pattern="[0-9]*" maxlength="7" name="sid" required/>
+        <input type="text" pattern="[0-9]*{7}" maxlength="7" name="sid" required/>
         <br/>
       </div>
       <div>
@@ -147,7 +198,9 @@ return true;
       </div>
       <div>
         <label>gender</label>
-        <input type="text" name="mf" required/>
+        <input type="radio" name="gender" value="male" required> Male<br>
+        <input type="radio" name="gender" value="female" required> Female<br>
+        <input type="radio" name="gender" value="other" required> Other
         <br/>
       </div>
       <div>
@@ -157,7 +210,7 @@ return true;
       </div>
       <div>
         <label>graduation year</label>
-        <input type="number" name="gday" pattern="[0-9]*" required/>
+        <input type="text" name="gday" pattern="[0-9]*" maxlength="4" required/>
         <br/>
       </div>
       <div>
@@ -172,12 +225,15 @@ return true;
       </div>
       <div>
         <label>Can you text (Y/N)</label>
-        <input type="text" name="text" required/>
-        <br/>
+        <input type="radio" name="text" value="yes" required> Yes<br>
+        <input type="radio" name="text" value="no" required> No<br>        <br/>
       </div>
       <div>
         <label>T-shirt size (XS, S, M, L, or XL)</label>
-        <input type="text" name="shirt" required/>
+        <input type="radio" name="shirt" value="s" required> Small<br>
+        <input type="radio" name="shirt" value="m" required> Medium<br>
+        <input type="radio" name="shirt" value="l" required> Large
+        <input type="radio" name="shirt" value="xl" required> XL
         <br/>
       </div>
       <div>
@@ -207,8 +263,8 @@ return true;
       </div>
       <div>
         <label>Would your parent's like updates also</label>
-        <input type="text" name="udate" required/>
-        <br/>
+        <input type="radio" name="udate" value="yes" required> Yes<br>
+        <input type="radio" name="udate" value="no" required> No<br>          <br/>
       </div>
       <div>
         <label>Home address</label>
@@ -217,7 +273,7 @@ return true;
       </div>
       <div>
         <label>Zip code </label>
-        <input type="number" pattern="[0-9]*" maxlength="5" min="0" name="zcode" required/>
+        <input type="text" pattern="[0-9]*" maxlength="5" name="zcode" required/>
         <br/>
       </div>
       <div>

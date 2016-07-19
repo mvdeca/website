@@ -1,44 +1,80 @@
-<html>
+<html class="no-js">
 <head>
   <!--<script src="react.js"></script>-->
-<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-
+  <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="
 http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+  <!--<link rel="shortcut icon" href="../favicon.ico"> -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="css/component.css" />
+  <link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+  <link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/selectFx.js"></script>
+  <script src="js/fullscreenForm.js"></script>
+
   <script type="text/javascript">
- window.onload=function(){
-  $("#validForm").validate();
-  $("#validForm").on('blur', function() {
-    if (!($(this).valid())) {
-        alert("Invalid");
-        $(this).focus(); // Does not work in FF 
-    }
-});
+  
 
-    var f = document.getElementById("validForm");
-    f.addEventListener("blur", blurFunction, true);
+  var isValid = true;
+ $(document).ready(function() {
+  
+    var f = document.getElementById("myform");
+    //f.addEventListener("blur", blurFunction, true);
     //f.addEventListener("focus", focusFunction, true);
-  }
+  });
 
-
-  function focusFunction() {
-    $("#validForm").validate();
-  }
+  /*function focusFunction() {
+    $("#myform").validate();
+  }*/
 
   function blurFunction() {
-    $("#validForm").validate();
-     $('*').blur(function(){
-         if(!$(this).valid()){
+    $('*').blur(function(){
+         
+    $("#myform").validate(
+      {
+        rules: 
+        {
+          sid: 
+          {
+            maxlength: 10,
+            digits: true,
+          },
+          cnum:
+          {
+            digits: true,
+            maxlength: 8,
+          },
+          hp:
+          {
+            digits: true,
+            maxlength: 8,
+          },
+          gday:
+          {
+            digits: true,
+          },
+          zcode:
+          {
+            digits: true,
+            maxlength: 5,
+          },
+          message: 
+          {
+            rangelength:[50,1050]
+          }
+        }
+      });
+   console.log(!($(this).valid()));
+    if(!($(this).valid())){
              $(this).focus();
              return false;
          }
      });
   }
-
-  
-  
-
 
   function validateForm(form) {
     console.log("im here!");
@@ -51,7 +87,6 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
     var gender = document.forms["myForm"]["gender"].value;
     var bday = document.forms["myForm"]["bday"].value;
     var grad = parseInt(document.forms["myForm"]["gday"].value);
-    var bday = document.forms["myForm"]["bday"].value;
     var status = document.forms["myForm"]["stat"].value;
     var cell = document.forms["myForm"]["cnum"].value;
     var text = document.forms["myForm"]["text"].value;
@@ -65,16 +100,7 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
     var pupdate = document.forms["myForm"]["udate"].value;
     var address = document.forms["myForm"]["addr"].value;
     var zip = parseInt(document.forms["myForm"]["zcode"].value);
-    console.log(tshirt);
-
-   /* if(gender.toLowerCase() != "m" && !gender.toLowerCase() != "f" && gender.toLowerCase() != "other")
-    {
-      alert("gender");
-      return false;
-    }*/
-    console.log(studentId);
-    console.log(zip);
-    console.log(grad);
+   
     if(studentId == NaN)
     {
       alert("Please enter valid ID.");
@@ -88,68 +114,7 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
       return false;
     }
 
-
-
-    /*if(text.toLowerCase() != "y" && text.toLowerCase() != "n")
-    {
-      alert("Not a valid update response!");
-      return false;
-    }
-
-    if(tshirt.toLowerCase() != "xs" && tshirt.toLowerCase() && "s" && tshirt.toLowerCase() != "m" && tshirt.toLowerCase() != "l" && tshirt.toLowerCase() != "xl")
-    {
-      alert("Not a valid shirt size!");
-      return false;
-    }
-
     
-
-    if(pupdate.toLowerCase() != "y" && pupdate.toLowerCase() != "n")
-    {
-      alert("Not a valid parent update response!");
-      return false;
-    }*/
-
-    
-
-     /*if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(bday))
-     {
-        alert("Please enter birthday in the form of mm/dd/yyyy");
-        return false;
-     }*/
-
-    // Parse the date parts to integers
-    /*
-    var parts = bday.split("/");
-    var day = parseInt(parts[1], 10);
-    var month = parseInt(parts[0], 10);
-    var year = parseInt(parts[2], 10);
-    console.log("hello again");
-
-    // Check the ranges of month and year
-    console.log(year)
-    console.log(year < 1000 || year > 3000 || month == 0 || month > 12)
-    if(!year < 1000 || !year > 3000 || !month == 0 || !month > 12)
-    {
-        alert("invalid year!")
-        return false;
-    }
-    console.log("passed year")
-    var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
-
-    // Adjust for leap years
-    if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-    {
-        monthLength[1] = 29;
-    }
-
-    // Check the range of the day
-    if(day > 0 && day <= monthLength[month - 1])
-    {
-      alert("Please enter birthday in the form of mm/dd/yyyy");
-      return false;
-    }
-    */
     if(zip == NaN)
     {
       alert("Please enter valid ID.");
@@ -164,122 +129,198 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
 
 </head>
 
-  <body>
-  <div>
-    <form name="myForm" id="validForm" onsubmit="return validateForm(this)" action="/register" method="POST" class="pure-form pure-form-stacked">
-      <div>
-        <label>username</label>
-        <input type="text" name="uname" required/>
-        <br/>
-      </div>
-      <div>
-        <label>password</label>
-        <input type="password" name="pass" required/>
-      </div>
-      <div>
-        <label>first name</label>
-        <input type="text" name="fname" required/>
-        <br/>
-      </div>
-      <div>
-        <label>last name</label>
-        <input type="text" name="lname" required/>
-        <br/>
-      </div>
-      <div>
-        <label>student id</label>
-        <input type="text" pattern="[0-9]*{7}" maxlength="7" name="sid" required/>
-        <br/>
-      </div>
-      <div>
-        <label>email</label>
-        <input type="email" name="em" required/>
-        <br/>
-      </div>
-      <div>
-        <label>gender</label>
-        <input type="radio" name="gender" value="male" required> Male<br>
-        <input type="radio" name="gender" value="female" required> Female<br>
-        <input type="radio" name="gender" value="other" required> Other
-        <br/>
-      </div>
-      <div>
-        <label>birthday</label>
-        <input type="date" name="bday" required/>
-        <br/>
-      </div>
-      <div>
-        <label>graduation year</label>
-        <input type="text" name="gday" pattern="[0-9]*" maxlength="4" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Membership status</label>
-        <input type="text" name="stat" required/>
-        <br/>
-      </div>
-      <div>
-        <label>cellphone number</label>
-        <input type="tel" name="cnum" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Can you text (Y/N)</label>
-        <input type="radio" name="text" value="yes" required> Yes<br>
-        <input type="radio" name="text" value="no" required> No<br>        <br/>
-      </div>
-      <div>
-        <label>T-shirt size (XS, S, M, L, or XL)</label>
-        <input type="radio" name="shirt" value="s" required> Small<br>
-        <input type="radio" name="shirt" value="m" required> Medium<br>
-        <input type="radio" name="shirt" value="l" required> Large
-        <input type="radio" name="shirt" value="xl" required> XL
-        <br/>
-      </div>
-      <div>
-        <label>Parent's first name</label>
-        <input type="text" name="pfn" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Parent's last name</label>
-        <input type="text" name="pln" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Relationship to student</label>
-        <input type="text" name="r" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Parent's email</label>
-        <input type="email" name="pm" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Parent's phone</label>
-        <input type="tel" name="hp" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Would your parent's like updates also</label>
-        <input type="radio" name="udate" value="yes" required> Yes<br>
-        <input type="radio" name="udate" value="no" required> No<br>          <br/>
-      </div>
-      <div>
-        <label>Home address</label>
-        <input type="text" name="addr" required/>
-        <br/>
-      </div>
-      <div>
-        <label>Zip code </label>
-        <input type="text" pattern="[0-9]*" maxlength="5" name="zcode" required/>
-        <br/>
-      </div>
-      <div>
-        <input type="submit" value="submit"/>
-      </div>
+<body bgcolor="#3498db">
+  <div class="container">
+  <div class="fs-form-wrap" id="fs-form-wrap">
+    <div class="fs-title">
+      <h1>Welcome to Monta Vista DECA!</h1>
     </div>
+    <form name="myForm" id="myform" class="fs-form fs-form-full" autocomplete="off" method="POST">
+      <ol class="fs-fields">
+        <li>
+          <label class="fs-field-label fs-anim-upper">username</label>
+          <input class="fs-anim-lower" type="text" name="uname" id="usr" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">password</label>
+          <input class="fs-anim-lower" type="password" name="pass" required/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">first name</label>
+          <input class="fs-anim-lower" type="text" name="fname" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">last name</label>
+          <input class="fs-anim-lower" type="text" name="lname" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">student id</label>
+          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="7" name="sid" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">email</label>
+          <input class="fs-anim-lower" type="email" name="em" required/>
+          <br/>
+        </li>
+        <li data-input-trigger>
+          <label class="fs-field-label fs-anim-upper">gender</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span><label for="mgender" class="radio-conversion"><input type="radio" id="mgender" name="gender" value="male" required />Male</label></span>
+            <span>
+            <label for="mgender" class="radio-conversion"><input type="radio" id="fgender" name="gender" value="female" required />Female</label></span>
+            <span>
+            <label for="mgender" class="radio-conversion"><input type="radio" id="ogender" name="gender" value="other" required />Other</label></span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">birthday</label>
+          <input class="fs-anim-lower" type="date" name="bday" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">graduation year</label>
+          <input class="fs-anim-lower" type="text" name="gday" pattern="\d*" maxlength="4" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Membership status</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+            <label for="rstat" class="radio-conversion">
+            <input type="radio" id="rstat" name="stat" value="returning" required> Returning
+            </label>
+          </span>
+          <span>
+            <label for="nstat" class="radio-conversion">
+            <input type="radio" id="nstat" name="stat" value="new" required> New
+            </label>
+          </span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">cellphone number</label>
+          <input class="fs-anim-lower" type="text" pattern="\d*" name="cnum" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Can you text (Y/N)</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+          <label for="ytext" class="radio-conversion">
+            <input type="radio" id="ytext" name="text" value="yes" required> Yes
+          </label>
+          </span>
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="ntext" name="text" value="no" required> No
+          </label>
+          </span> 
+          </div>     
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">T-shirt size (XS, S, M, L, or XL)</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+            <label for="sshirt" class="radio-conversion">
+            <input type="radio" id="sshirt" name="shirt" value="s" required> Small
+            </label>
+          </span>
+          <span>
+          <label for="mshirt" class="radio-conversion">
+            <input type="radio" id="mshirt" name="shirt" value="m" required> Medium
+          </label>
+          </span>
+          <span>
+          <label for="lshirt" class="radio-conversion">
+            <input type="radio" id="lshirt" name="shirt" value="l" required> Large
+          </label>
+          </span>
+          <span>
+            <label for="xlshirt" class="radio-conversion">
+            <input type="radio" id="xlshirt" name="shirt" value="xl" required> XL
+            </label>
+          </span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's first name</label>
+          <input class="fs-anim-lower" type="text" name="pfn" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's last name</label>
+          <input class="fs-anim-lower" type="text" name="pln" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Relationship to student</label>
+          <input class="fs-anim-lower" type="text" name="r" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's email</label>
+          <input class="fs-anim-lower" type="email" name="pm" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's phone</label>
+          <input class="fs-anim-lower" type="text" pattern="\d*" name="hp" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Would your parent's like updates also</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+            <label for="yupdate" class="radio-conversion">
+            <input type="radio" id="yupdate" name="udate" value="yes" required> Yes
+            </label>
+          </span>
+          <span>
+            <label for="nupdate" class="radio-conversion">
+            <input type="radio" id="nupdate" name="udate" value="no" required> No
+            </label>
+          </span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Home address</label>
+          <input class="fs-anim-lower" type="text" name="addr" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Zip code </label>
+          <input class="fs-anim-lower" type="text" pattern="[0-9]*" maxlength="5" name="zcode" required/>
+          <br/>
+        </li>
+      </ol>  
+      <button class="fs-submit" type="submit">Submit</button>
     </form>
+  </div>
+  </div>
+  <script type="text/javascript">
+    (function() {
+        var formWrap = document.getElementById( 'fs-form-wrap' );
+
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+          new SelectFx( el, {
+            stickyPlaceholder: false,
+            onChange: function(val){
+              document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+            }
+          });
+        } );
+
+        new FForm( formWrap, {
+          onReview : function() {
+            classie.add( document.body, 'overview' ); // for demo purposes only
+          }
+        } );
+      })();
+  </script>
+
   </body>
 </html>

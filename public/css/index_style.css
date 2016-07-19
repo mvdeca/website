@@ -1,0 +1,162 @@
+
+html, body {
+    margin: 0px;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+
+@font-face{
+    font-family: "Myriad-Pro";  
+    src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_thin.ttf) format("truetype");
+}
+
+@font-face{
+    font-family: "Myriad-Pro-light";  
+    src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_ultralight.ttf) format("truetype");
+}
+
+
+#background-vid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.section-content {
+  width: 100%;
+  color: #fff;
+  font-family: "Raleway";
+  font-size: 3.8vw;
+  font-weight: 200;
+  left: 0;
+  letter-spacing: 5px;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#section-main {
+    height: 100vh;
+    background: white;
+    position: relative;
+}
+
+h1 {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    font-weight: lighter;
+    letter-spacing: 0.1em;
+}
+
+#header-img {
+    width: 55%;
+    display: block;
+    margin: auto;
+}
+
+
+
+
+.c3s {
+    background-color: #000000;
+    height: 85vh;
+    width: 100%;
+    z-index: 1;
+
+}
+
+
+
+#competitions {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/competitions.jpg');
+    background-size: cover;
+}
+
+#community {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/community.jpg');
+    background-size: cover;
+}
+
+#culture {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/culture.jpg');
+    background-size: cover;
+}
+
+.seperator {
+    background-color: white;
+    height: 0.8vh;
+}
+
+.culture-header {
+    font-family: 'Myriad-Pro';
+    font-size: 50px;
+    margin-left: 30%;
+    color: #FFFFFF;
+    font-weight: medium;
+    letter-spacing: 1px;
+}
+
+
+@media (min-width: 1025px) {
+    .content-img {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    #header-img {
+        width: 75%;
+    }
+    .content-container {
+        left: 50%;
+        width: 50%;
+    }
+    #content-img2 {
+        top: 100vh;
+    }
+    #content-img3 {
+        top: 200vh;
+    }
+}
+
+@media (max-width: 600px) {
+    #header-img {
+        width: 90%;
+    }
+    .content-container {
+        left: 0%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .content-text {
+        text-align: center;
+    }
+    .content-text p {
+        color: black;
+    }
+}
+
+

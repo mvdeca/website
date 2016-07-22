@@ -1,0 +1,47 @@
+
+#community1 {
+	height: 420px;
+	width: 940px;
+	margin: 0 auto;
+}
+
+#community2 {
+	height: 700px;
+	width: 940px;
+	margin: 0 auto;	
+}
+
+.friendslist,.friendslist2 {
+	color: #000000;
+	line-height: 25px;
+}
+
+.friendslist2 {
+	color: #000000;
+	text-align: right;
+}
+
+img.commimg:hover {
+    -webkit-box-shadow: 0px 0px 10px rgba(88,88,88,0.8) ;
+    -moz-box-shadow: 0px 0px 10px rgba(88,88,88,0.8) ;
+    box-shadow: 0px 0px 10px rgba(88,88,88,0.8) ;
+}
+
+.commimg {
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -kthtml-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+#header-slide-comm {
+  background: url(../img/comm_header.jpg) 50% 0 repeat fixed; min-height: 380px; 
+  height: 380px; 
+  margin: 0 auto; 
+  background-size: auto 800px;
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+}

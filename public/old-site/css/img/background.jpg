@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>404 Page Not Found | Monta Vista DECA</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Ani Kunaparaju, Nicholas Shen">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+	    <!-- ## Standard stylesheet imports and jquery imports. The majority of the styling is handled in style.css. However, columns rows and the responsiveness is handled in gumby.css. For more info on the gumby framework, please visit: http://gumbyframework.com -->
+
+		<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+
+
+	    <style type="text/css">
+	    	body
+	    	{
+	    		background-color:#EEE;
+	    		width: 1250px;
+	    		overflow: hidden;
+	    		font-family: 'Actor', sans-serif;
+	    	}
+
+	    	.person
+	    	{
+	    		position: absolute;
+	    		width: 100%;
+	    		bottom: -5px;
+	    		float:left;
+	    		z-index:-1;
+
+	    	}
+
+	    	.message
+	    	{
+	    		float: right;
+	    	}
+
+	    	h2
+	    	{
+	    		color: #000;
+	    		font-size: 52px;
+	    		margin-right: 40px;
+	    		margin-top: 30px;
+	    		line-height: 5px;
+	    	}
+
+	    	h1
+	    	{
+				color: #06569D;
+				font-size:75px;
+				margin-right:30px;	
+				line-height: 30px;
+	    	}
+
+	    	p
+	    	{
+	    		float: right;
+	    		width: 450px;
+	    		margin-right: 20px;
+	    		margin-top: 0px;
+	    		font-size: 18px;
+	    		line-height: 25px;
+	    	}
+
+	    	.bluetext
+	    	{
+	    		text-decoration: none;
+	    		color: #06569D;
+	    	}
+
+	    	.navigation
+	    	{
+	    		float: right;
+	    	}
+
+
+	    	h3
+	    	{
+	    		color: #000;
+	    		font-size: 46px;
+	    		margin-right: 40px;
+	    		margin-top: 30px;
+	    		margin-bottom: 0px;
+	    	}
+
+	    	.sp
+	    	{
+	    		font-size: 18px;
+	  			line-height: 26px;
+	    	}
+
+	    	span
+	    	{
+	    		font-size: 12px;
+	    	}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="person">
+			<img class="kushalpic" width="750px"src="img/dino.png">
+		</div>
+
+		<div class="message">
+			<h2>page not available.</h2>
+			<h1>but dino is.</h1>
+			<p>
+				dino is the mvdeca dog. he loves bones, chewtoys, and warren. he competes in <a class="bluetext" target="_new" href="competitions.php">eating and running</a>. interested? <a class="bluetext" href="mailto:kushal@mvdeca.org">email him at dino[at]mvdeca.org.</a>
+			</p>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<div class="navigation">
+			<h3> not interested? </h3>
+			<p class="sp">
+				your loss. if you think you've arrived at this page in error - <font class="bluetext">call sanketh or hari asap</font>, or send an email to <a class="bluetext" href="mailto:hi@mvdeca.org"> hi@mvdeca.org</a>. otherwise, go to our <a class="bluetext" target="_new" href="index.php">home</a> page.
+			</p>
+			<br><br>
+			<span> shamlessly taken from <a class="bluetext" target="_new" href="http://itthing.com/wp-content/uploads/capture5.jpg">mint.com former 404 page</a></span>
+		</div>
+	</body>
+
+</html>

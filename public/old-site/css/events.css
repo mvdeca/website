@@ -1,0 +1,26 @@
+.dates {
+	font-size: 30px;
+}
+
+.loc {
+	font-size: 24px;
+	font-weight: 200;
+}
+
+.introp {
+	color: #000000;
+	font-size: 14px;
+}
+.badge {
+	font-weight: 400;
+	border-radius: 2px;
+	background-color: #C0C0C0 ;
+	font-size: 16px;
+}
+
+.details-box {
+	background-color: #F0F0F0 ;
+	padding-bottom: 38px;
+	padding-left: 20px;
+	height:210px;
+}

@@ -93,12 +93,12 @@ h1 {
 
 
 #competitions {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/competitions.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/competitions.jpg');
     background-size: cover;
 }
 
 #community {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/community.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/community.jpg');
     background-size: cover;
 }
 
@@ -165,6 +165,20 @@ h1 {
 }
 
 
+.nav-lis {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    color: rgba(158, 158, 158, 1.00);
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.nav-lis-right {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    color: rgba(158, 158, 158, 1.00);
+    font-size: 13px;
+}
 
 
 .c-subheader {
@@ -174,7 +188,18 @@ h1 {
     letter-spacing: 0.016em;
 }
 
+.btn-flat {
+    border: 1px solid rgba(158, 158, 158, 1.00);
+    border-radius: 4px;
+    color: black;
+}
 
+
+.brand-logo {
+   font-weight: 300;
+   font-family: "Open Sans";
+   letter-spacing: 1px;
+}
 
 @media (max-width: 1024px) {
     #header-img {

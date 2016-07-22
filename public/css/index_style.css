@@ -86,6 +86,7 @@ h1 {
     height: 85vh;
     width: 100%;
     z-index: 1;
+    overflow: auto;
 
 }
 
@@ -102,7 +103,12 @@ h1 {
 }
 
 #culture {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/culture.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/culture.jpg');
+    background-size: cover;
+}
+
+#main-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/main.jpg');
     background-size: cover;
 }
 
@@ -111,52 +117,81 @@ h1 {
     height: 0.8vh;
 }
 
-.culture-header {
+.c-header {
     font-family: 'Myriad-Pro';
-    font-size: 50px;
-    margin-left: 30%;
+    font-size: 52px;
+    margin-left: auto;
     color: #FFFFFF;
-    font-weight: medium;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+.c-sheader {
+    margin: auto;
+    text-align: center;
+    font-family: 'Myriad-Pro';
+    font-size: 65px;
+    margin-left: auto;
+    color: #FFFFFF;
+    letter-spacing: 0.016em;
+    margin-top: 120px;
+    overflow: auto;
+
+
+    width: 54%;
+    border-radius: 4px;
+    background: rgba(0, 82, 155, 0.9);
+}
+
+.transbox {
+    margin: auto;
+    width: 54%;
+    border-radius: 4px;
+    background: rgba(240, 240, 240, 1.00);
+    overflow: auto;
+}
+.transbox p {
+    margin-top: 20px;
+    padding-right: 20px;
+        padding-left: 20px;
+
+    width: 100%;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 18px;
+    margin-left: auto;
+    color: #000000;
+    letter-spacing: normal;
 }
 
 
-@media (min-width: 1025px) {
-    .content-img {
-        display: none;
-    }
+
+
+.c-subheader {
+    font-family: 'Myriad-Pro';
+    font-size: 18px;
+    color: #FFFFFF;
+    letter-spacing: 0.016em;
 }
+
+
+
 @media (max-width: 1024px) {
     #header-img {
         width: 75%;
     }
-    .content-container {
-        left: 50%;
-        width: 50%;
-    }
-    #content-img2 {
-        top: 100vh;
-    }
-    #content-img3 {
-        top: 200vh;
-    }
-}
 
 @media (max-width: 600px) {
     #header-img {
         width: 90%;
     }
-    .content-container {
-        left: 0%;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.7);
-    }
-    .content-text {
-        text-align: center;
-    }
-    .content-text p {
-        color: black;
-    }
 }
+
+a {
+    color: #FFFFFF;
+    text-decoration:none;
+
+}
+
 
 

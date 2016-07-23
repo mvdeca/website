@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/materialize/materialize.min.css" media="screen" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
@@ -51,11 +53,35 @@
 					<li><a class="waves-effect waves-light btn-flat" href="/logout">Sign In</i></a></li>
 				<% } %>
 	      </ul>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="sass.html">Sass</a></li>
+	        <li><a href="badges.html">Components</a></li>
+	        <li><a href="collapsible.html">Javascript</a></li>
+	        <li><a href="mobile.html">Mobile</a></li>
+	      </ul>
 	    </div>
 	  </nav>
 
-	  <script type="text/javascript">
-	  	$(".dropdown-button").dropdown();
-	  	$(".button-collapse").sideNav();
+
+
+
+
+	  <script type="text/javascript">	  	
+		$( document ).ready(function(){
+  			$(".button-collapse").sideNav();
+
+			  $('.dropdown-button').dropdown({
+			      inDuration: 300,
+			      outDuration: 225,
+			      constrain_width: false, // Does not change width of dropdown to that of the activator
+			      hover: true, // Activate on hover
+			      gutter: 0, // Spacing from edge
+			      belowOrigin: true, // Displays dropdown below the button
+			      alignment: 'right' // Displays dropdown with edge aligned to the left of button
+			    }
+			  );
+        
+		})
 	  </script>
   </div>

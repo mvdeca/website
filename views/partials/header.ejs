@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
     <link rel="stylesheet" type="text/css" href="css/materialize/materialize.min.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/index_style.css" media="screen" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/index_style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/index_style.css" media="screen" />
 
 
     
@@ -24,23 +24,38 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500" rel="stylesheet">
   </head>
 
+	
   <div class="navbar-fixed white" >
+	  <ul id="dropdown1" class="dropdown-content">
+		<li><a class="dropdown-text black-text" href="/profile">Profile</a></li>
+		<li><a class="dropdown-text black-text" href="/test">Tests Prep (beta)</a></li>
+		<li class="divider"></li>
+		<li><a class="dropdown-text black-text" href="/logout">Sign Out</a></li>
+	  </ul>
 	  <nav>
 	    <div class="nav-wrapper white">
 	      <a href="#" class="brand-logo center black-text">MONTA VISTA DECA</a>
 	      <ul id="nav-mobile" class="left hide-on-med-and-down">
-	        <li><a class="nav-lis" href="sass.html">ABOUT</a></li>
+	        <li><a class="nav-lis" href="/about">ABOUT</a></li>
 	        <li><a class="nav-lis" href="/community">COMMUNITY</a></li>
-	        <li><a class="nav-lis" href="collapsible.html">EVENTS</a></li>
-	       	<li><a class="nav-lis" href="badges.html">COMPETITIONS</a></li>
+	        <li><a class="nav-lis" href="/events">EVENTS</a></li>
+	       	<li><a class="nav-lis" href="/competitions">COMPETITIONS</a></li>
 	      </ul>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	      		<li><a class="nav-lis-right" href="badges.html">INCOMING FRESHMAN</a></li>
-	      		<li><a class="nav-lis-right" href="badges.html">UPDATES</a></li>
+	      		<li><a class="nav-lis-right" href="http://bbc.mvdeca.org">INCOMING FRESHMAN</a></li>
+	      		<li><a class="nav-lis-right" href="/updates">UPDATES</a></li>
 	      		<% if (loggedIn) { %>
-					<li><a class="waves-effect waves-light btn-flat" href="/logout"><%= username %></a></li>
+				      <li><a class="dropdown-button" href="#!" data-activates="dropdown1"> <%= username %> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<% } %>
+	      		<% if (!loggedIn) { %>
+					<li><a class="waves-effect waves-light btn-flat" href="/logout">Sign In</i></a></li>
 				<% } %>
 	      </ul>
 	    </div>
 	  </nav>
+
+	  <script type="text/javascript">
+	  	$(".dropdown-button").dropdown();
+	  	$(".button-collapse").sideNav();
+	  </script>
   </div>

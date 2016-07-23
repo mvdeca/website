@@ -7,19 +7,19 @@ var router = express.Router();
 function isAuth (req, res, next) {  //middleware to check if the user is logged in, if not redirect to login
 	if (req.user) {
 		next();
-  	}
+  }
   else {
     res.redirect('/login');
 	}
 }
 
 //GET home page. 
-router.get('/', isAuth, function atHome (req, res, next) {
+router.get('/', function atHome (req, res, next) {
   if (req.user) {
-    res.render('index', {"loggedIn": "true", "username" : req.user});
+    res.render('index', {"loggedIn": true, "username" : req.user});
   }
   else {
-	  res.render('index');
+	  res.render('index', {"loggedIn": false, "username" : "null"});
   }
 });
 
@@ -42,7 +42,12 @@ router.get('/register', function onRegister (req, res, next) {
 });
 
 router.get('/community', function onCommunity (req, res, next) {
-  res.render('community');
+    if (req.user) {
+    res.render('community', {"loggedIn": true, "username" : req.user});
+  }
+  else {
+    res.render('community', {"loggedIn": false, "username" : "null"});
+  }
 });
 
 //send new credentials to server

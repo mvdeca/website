@@ -194,6 +194,21 @@ h1 {
     color: black;
 }
 
+.dropdown-button {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    color: black;
+    font-size: 15px;
+}
+
+.dropdown-text {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    color: black;    
+    font-size: 3px;
+}
+
+
 
 .brand-logo {
    font-weight: 300;

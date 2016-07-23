@@ -37,7 +37,9 @@
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
 	      		<li><a class="nav-lis-right" href="badges.html">INCOMING FRESHMAN</a></li>
 	      		<li><a class="nav-lis-right" href="badges.html">UPDATES</a></li>
-				<li><a class="waves-effect waves-light btn-flat" href="/logout">Log Out</a></li>
+	      		<% if (loggedIn) { %>
+					<li><a class="waves-effect waves-light btn-flat" href="/logout"><%= username %></a></li>
+				<% } %>
 	      </ul>
 	    </div>
 	  </nav>

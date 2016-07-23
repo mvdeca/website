@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'mvdecais#1intheworld' })); // session secret 
+app.use(session({ secret: 'mvdeca' })); // session secret 
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -54,7 +54,7 @@ passport.use(new LocalStrategy(
 ));
 
 passport.serializeUser( function whenSerialized(user, done) {
-  done(null, user.id);
+  done(null, user.username);
 });
 passport.deserializeUser( function whenDeserialized(user, done) {
   done(null, user);

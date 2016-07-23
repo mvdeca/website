@@ -15,8 +15,14 @@ function isAuth (req, res, next) {  //middleware to check if the user is logged 
 
 //GET home page. 
 router.get('/', isAuth, function atHome (req, res, next) {
-	res.render('index')
+  if (req.user) {
+    res.render('index', {"loggedIn": "true", "username" : req.user});
+  }
+  else {
+	  res.render('index');
+  }
 });
+
 
 //login web page route
 router.get('/login', function atLogin (req, res, next) {

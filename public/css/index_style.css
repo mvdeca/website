@@ -233,6 +233,45 @@ h1 {
         width: 75%;
     }
 
+        .c-sheader {
+        margin: auto;
+        text-align: center;
+        font-family: 'Myriad-Pro';
+        font-size: 5vw;
+        margin-left: auto;
+        color: #FFFFFF;
+        letter-spacing: 0.016em;
+        margin-top: 140px;
+        overflow: auto;
+
+
+        width: 75%;
+        border-radius: 4px;
+        background: rgba(0, 82, 155, 0.9);
+    }
+
+    .transbox {
+        margin: auto;
+        width: 75%;
+        border-radius: 4px;
+        background: rgba(240, 240, 240, 0.90);
+        overflow: auto;
+    }
+    .transbox p {
+        margin-top: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        width: 100%;
+        text-align: center;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 2.5vw;
+        margin-left: auto;
+        color: #000000;
+        letter-spacing: normal;
+     }
+
 }
 @media (max-width: 600px) {
     #header-img {
@@ -243,7 +282,7 @@ h1 {
         margin: auto;
         text-align: center;
         font-family: 'Myriad-Pro';
-        font-size: 7vw;
+        font-size: 10vw;
         margin-left: auto;
         color: #FFFFFF;
         letter-spacing: 0.016em;
@@ -260,7 +299,7 @@ h1 {
         margin: auto;
         width: 90%;
         border-radius: 4px;
-        background: rgba(240, 240, 240, 1.00);
+        background: rgba(240, 240, 240, 0.90);
         overflow: auto;
     }
     .transbox p {
@@ -272,7 +311,7 @@ h1 {
         text-align: center;
         font-family: 'Open Sans';
         font-weight: 300;
-        font-size: 2vw;
+        font-size: 4vw;
         margin-left: auto;
         color: #000000;
         letter-spacing: normal;

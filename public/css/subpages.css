@@ -71,7 +71,7 @@ html, body {
 
     width: 54%;
     border-radius: 4px;
-    background: rgba(53, 56, 66, 0.85);
+    background: rgba(0, 82, 155, 0.9);
 }
 
 
@@ -93,7 +93,6 @@ html, body {
 
 .content-panel{
 	background-color: white;
-	height: 4000px;
 }
 
 .about-space {
@@ -120,29 +119,118 @@ html, body {
 
 }
 
-.overview-header h1 {
+.event-header h1 {
     margin-top: 30px;
     margin-bottom: -5px;
     text-align: left;
-    font-family: 'Myriad-Pro';
-    font-weight: 600;
-    font-size: 35px;
-    letter-spacing: 1.5px;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 1.8px;
     color: black;
 }
 
-.overview-header p {
+.event-header p {
     text-align: left;
     font-family: 'Myriad-Pro';
     font-weight: 300;
     font-size: 17px;
     color: black;
-    margin-right: 70px;
+    margin-right: 100px;
     margin-bottom:30px;
 
 }
 
-.comps-seperator {
-    margin-right: 80px;
+.event-seperator {
+    margin-right: 100px;
     border-bottom: 1.5px solid rgba(208, 208, 208, 1.00);
 }
+
+.event-titles th {
+    font-family: 'Open Sans';
+    font-weight: 800;
+    font-size: 15px;    
+}
+
+.event-titles th {
+    font-family: 'Open Sans';
+    font-weight: 800;
+    font-size: 15px;    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+table {
+    border-collapse: separate !important
+}
+
+table td {
+border-left: 0.5px solid rgba(208, 208, 208, 0.50);
+border-right: 0.5px solid rgba(208, 208, 208, 0.50);
+
+
+}
+
+table td:first-child {
+border-left: none;
+
+}
+
+table td:last-child {
+border-right: none;
+}
+
+table th {
+border-left: 0.5px solid rgba(208, 208, 208, 0.50);
+border-right: 0.5px solid rgba(208, 208, 208, 0.50);
+
+
+}
+
+table th:first-child {
+border-left: none;
+
+}
+
+table th:last-child {
+border-right: none;
+}
+
+tr {
+  height: 6px;
+}
+
+td : first-child {
+  width: 10px;
+}
+
+li{
+   list-style:circle;
+}
+
+.custom-table {
+    border: 1px solid rgba(208, 208, 208, 1.00);
+    border-radius: 5px;
+    height: 100px;
+}
+
+.table-text td { 
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 13px; 
+    padding-left: 13px;
+ }
+
+ .tabl {
+    margin-right: 100px;
+ }
+
+ .sub-event-seperator {
+    margin-top: 50px;
+    margin-right: 100px;
+    border-bottom: 1.5px solid rgba(208, 208, 208, 1.00);
+}
+
+
+
+ 

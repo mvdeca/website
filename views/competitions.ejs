@@ -8,20 +8,31 @@
 
 	 	<div class="row">
 	      <div class="col s12 m4 l3 hide-on-small-only table-of-contents">
-			<div class="table-of-contents">
-				dkjfalksdjfads
-			</div>
+	      		<div class="table-of-contents-content">
+	      			<ul> <a class="comps-margin-overview"  href="#overview">OVERVIEW</a> </ul>
+					<ul> <p class="comps-btn-header">ROLEPLAY EVENTS</p></ul>
+					<ul> <a class="comps-btn" href="#principles">PRINCIPLES</a> </ul>
+	      			<ul> <a class="comps-btn" href="#tdm">TEAM DECISION MAKING</a> </ul>
+	      			<ul> <a class="comps-btn" href="#series">SERIES</a> </ul>
+					<ul> <p class="comps-btn-header">WRITTEN EVENTS</p></ul>
+	      			<ul> <a class="comps-btn" href="#or">OPERATIONS RESEARCH</a> </ul>
+	      			<ul> <a class="comps-btn" href="#e">ENTREPRENEURSHIP</a> </ul>
+	      			<ul> <a class="comps-btn" href="#adc">MARKETING REP</a> </ul>
+
+
+	      		</div>
 	      </div>
 
 	      <div class="col s12 m8 l9 content-panel offset-m4 offset-l3"> 
-	      	<div class="event-header"> 
+	      	<div class="event-header" id="overview"> 
 	      		<h1> OVERVIEW </h1>
+
 	      		<p>The MVDECA competitions program trains our members, perfecting their writing, speaking and presentation skills. Both events have a wide array of sub categories that require a strong understanding of Finance, Marketing, Hospitality and Business administration. Here at MVDECA we strive to train our members to be #1 in the world.</p>
 	      	</div>
 	      	
 	      	<div class="event-seperator"></div>
 	      	
-	      	<div class="event-header"> 
+	      	<div class="event-header" id="principles"> 
 	      		<h1> PRINCIPLES </h1>
 	      		<p>Principles events are events for first year members only. All four Principles events focus on the foundations of business while introducing concepts from DECA’s four main career clusters: finance, hospitality, marketing, and business management. These events serve as the foundation for all other competitive events</p>
 	      	</div>
@@ -78,7 +89,7 @@
 
 			<div class="sub-event-seperator"></div>	 
 
-			<div class="event-header"> 
+			<div class="event-header" id="tdm"> 
 	      		<h1> TEAM DESICION MAKING </h1>
 	      		<p>Team Decisions Making events are team roleplay events that involve 2 members working together during the presentation. Teams receive 30 minute to break down a case study and create a solution for the problem at hand.</p>
 	      	</div>
@@ -160,7 +171,7 @@
 
 	      	<div class="sub-event-seperator"></div>	   
 
-	      	<div class="event-header"> 
+	      	<div class="event-header" id="series"> 
 	      		<h1> SERIES EVENTS </h1>
 	      		<p>Individual Series events are individual role-play events in which competitors receive a 10-minutes of preparation period to discuss the given topics in the roleplay and provide a solution to the given problem. The 13 Individual Series events cover a wide range of topics centered around DECA’s four main clusters: finance, hospitality, marketing, and business management.</p>
 	      	</div>
@@ -287,7 +298,7 @@
 
 	      	<div class="sub-event-seperator"></div>	   
 
-	      	<div class="event-header"> 
+	      	<div class="event-header" id="or"> 
 	      		<h1> OPERATIONS RESEARCH </h1>
 	      		<p>Operations Research events consist of a written business plan and a presentation. Operations Research events are focused around selecting a company and creating a business plan to modify the way the company presents itself. Participants will take the role of hired consultants of a single-unit or independent operation and will conduct research about the company</p>
 	      	</div>
@@ -348,7 +359,7 @@
 	    
 	    	<div class="sub-event-seperator"></div>	   
 			
-	      	<div class="event-header"> 
+	      	<div class="event-header" id="e"> 
 	      		<h1> ENTREPRENEURSHIP </h1>
 	      		<p>Entrepreneurship events consist of a written business plan and a presentation. In entrepreneurship events, participants will take the role of current business owner or entrepreneur, and will transform a business idea into a realistic, functional business. Entrepreneurship events incorporate a wide variety of business concepts, from finance to marketing.</p>
 	      	</div>
@@ -421,7 +432,7 @@
 
 			<div class="sub-event-seperator"></div>	 
 
-			<div class="event-header"> 
+			<div class="event-header" id="adc"> 
 	      		<h1> MARKETING REP</h1>
 	      		<p>Marketing Representative events consist of a written business plan, a presentation, and a written test. Like Team Decision-Making Events, the test will be taken individually, but the presentation and the plan will be submitted as a team. A Marketing Representative event is focused on creating a promotional campaign for a certain business. Participants will take the role of external marketing consultants, and like Operations Research events, will gain experience interacting with real businesses.</p>  		
 	      	</div>
@@ -472,17 +483,27 @@
 
     </body>
     <script type="text/javascript">
-		  $(document).ready(function(){
-		  		//$('.row .table-of-contents').pushpin({ top: $('.row .table-of-contents').offset().top });
-		  });
+		$(document).ready(function(){
+				$('.row .table-of-contents').pushpin({ top: $('.row .table-of-contents').offset().top });
+		});
+
+		$(function() {
+		  $('a[href*="#"]:not([href="#"])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html, body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		});
+	   });
     </script>
 
 
-
-
-  <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
-  <script src="js/materialize.min.js"></script>
-  <script type="text/javascript" src="js/init.js"></script>
 
 
 </html>

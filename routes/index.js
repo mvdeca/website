@@ -26,6 +26,9 @@ router.get('/', function atHome (req, res, next) {
 
 //login web page route
 router.get('/login', function atLogin (req, res, next) {
+    if (req.user) {
+      res.redirect('/logout');
+    }
   	res.render('login');
 });
 

@@ -74,6 +74,15 @@ router.get('/competitions', function onCommunity (req, res, next) {
   }
 });
 
+router.get('/about', function onCommunity (req, res, next) {
+    if (req.user) {
+    res.render('about', {"loggedIn": true, "username" : req.user});
+  }
+  else {
+    res.render('about', {"loggedIn": false, "username" : "null"});
+  }
+});
+
 
 
 module.exports = router;

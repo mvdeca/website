@@ -87,7 +87,6 @@ h1 {
     width: 100%;
     z-index: 1;
     overflow: auto;
-
 }
 
 
@@ -316,6 +315,22 @@ h1 {
         color: #000000;
         letter-spacing: normal;
      }
+
+    #competitions {
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/competitions.jpg');
+        background-size: cover;
+
+    }
+
+    #community {
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/community.jpg');
+        background-size: cover;
+    }
+
+    #culture {
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/culture.jpg');
+        background-size: cover;
+    }
 }
 
 a {

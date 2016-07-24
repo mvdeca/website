@@ -12,12 +12,14 @@
     <link rel="stylesheet" type="text/css" href="css/materialize/materialize.min.css" media="screen" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="js/materialize.min.js"></script>
+
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
     <link rel="stylesheet" type="text/css" href="css/index_style.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/index_style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/subpages.css" media="screen" />
 
 
     
@@ -90,7 +92,7 @@
 		$( document ).ready(function(){
   			$(".button-collapse").sideNav();
 
-			  $('.dropdown-button').dropdown({
+			$('.dropdown-button').dropdown({
 			      inDuration: 300,
 			      outDuration: 225,
 			      constrain_width: false, // Does not change width of dropdown to that of the activator
@@ -98,9 +100,8 @@
 			      gutter: 0, // Spacing from edge
 			      belowOrigin: true, // Displays dropdown below the button
 			      alignment: 'right' // Displays dropdown with edge aligned to the left of button
-			    }
-			  );
-        
+			});
+			$('.scrollspy').scrollSpy();
 		})
 	  </script>
   </div>

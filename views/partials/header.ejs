@@ -26,8 +26,32 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500" rel="stylesheet">
   </head>
 
-	
-  <div class="navbar-fixed white" >
+
+		
+    <div class="navbar white hide-on-large-only" >
+	  <nav>
+	    <div class="nav-wrapper white">
+	      <a href="#!" class="brand-logo black-text">MVDECA</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="/about">About</a></li>
+	        <li><a href="/community">Community</a></li>
+	        <li><a href="/events">Events</a></li>
+	        <li><a href="/competitions">Competitions</a></li>
+	       	<li><a href="http://bbc.mvdeca.org">Incoming Freshman</a></li>
+	       	<li><a href="/updates">Updates</a></li>
+	  		<% if (loggedIn) { %>
+	       		<li><a href="/logout">Logout</a></li>
+	       		<li><a href="/profile">Profile</a></li>
+			<% } %>
+	  		<% if (!loggedIn) { %>
+	  			<li><a href="/login">Sign In</a></li>
+			<% } %>
+	    </div>
+	  </nav>
+	</div>
+
+	  <div class="navbar-fixed white hide-on-med-and-down" >
 	  <ul id="dropdown1" class="dropdown-content">
 		<li><a class="dropdown-text black-text" href="/profile">Profile</a></li>
 		<li><a class="dropdown-text black-text" href="/test">Tests Prep (beta)</a></li>
@@ -36,7 +60,7 @@
 	  </ul>
 	  <nav>
 	    <div class="nav-wrapper white">
-	      <a href="#" class="brand-logo center black-text">MONTA VISTA DECA</a>
+	      <a href="#!" class="brand-logo center black-text">MONTA VISTA DECA</a>
 	      <ul id="nav-mobile" class="left hide-on-med-and-down">
 	        <li><a class="nav-lis" href="/about">ABOUT</a></li>
 	        <li><a class="nav-lis" href="/community">COMMUNITY</a></li>
@@ -53,19 +77,14 @@
 					<li><a class="waves-effect waves-light btn-flat" href="/logout">Sign In</i></a></li>
 				<% } %>
 	      </ul>
-	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-	      <ul class="side-nav" id="mobile-demo">
-	        <li><a href="sass.html">Sass</a></li>
-	        <li><a href="badges.html">Components</a></li>
-	        <li><a href="collapsible.html">Javascript</a></li>
-	        <li><a href="mobile.html">Mobile</a></li>
-	      </ul>
 	    </div>
 	  </nav>
+	</div>
 
 
 
 
+		
 
 	  <script type="text/javascript">	  	
 		$( document ).ready(function(){

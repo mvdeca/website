@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var $window = $(window);
   if($window.width() > 1024) {
-    $('#img-container').pushpin({ top: $('#img-container').offset().top, bottom: $('#img-container').offset().top*3 });
+    //$('#img-container').pushpin({ top: $('#img-container').offset().top, bottom: $('#img-container').offset().top*3 });
     updateImage();
     $window.on('scroll', updateImage);
   }

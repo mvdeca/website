@@ -446,6 +446,44 @@ li{
     vertical-align: top;
 }
 
+
+.user-data h1{
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.016em;
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 100px;
+    text-align: left;
+}
+
+.user-data p {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.016em;
+}
+
+.user-data h3 {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.009em;
+    font-weight: 600;
+    font-size: 20px;
+}
+.user-data span {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.009em;
+    font-weight: 600;
+    font-size: 14px;
+}
+.user-data ul {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.009em;
+    font-weight: 300;
+    font-size: 14px;
+}
  @media (max-width: 1024px) {
     .competition-header-text {
         margin: auto;

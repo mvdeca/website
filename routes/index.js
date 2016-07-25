@@ -13,15 +13,6 @@ function isAuth (req, res, next) {  //middleware to check if the user is logged 
 	}
 }
 
-//GET home page. 
-router.get('/', function atHome (req, res, next) {
-  if (req.user) {
-    res.render('index', {"loggedIn": true, "username" : req.user});
-  }
-  else {
-	  res.render('index', {"loggedIn": false, "username" : "null"});
-  }
-});
 
 
 //login web page route
@@ -59,9 +50,20 @@ router.get('/logout', function atLogout (req, res) {
   });
 });
 
+
+//GET home page. 
+router.get('/', function atHome (req, res, next) {
+  if (req.user) {
+    res.render('index', {"loggedIn": true, "username" : req.user.username});
+  }
+  else {
+    res.render('index', {"loggedIn": false, "username" : "null"});
+  }
+});
+
 router.get('/community', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('community', {"loggedIn": true, "username" : req.user});
+    res.render('community', {"loggedIn": true, "username" : req.user.username});
   }
   else {
     res.render('community', {"loggedIn": false, "username" : "null"});
@@ -70,7 +72,7 @@ router.get('/community', function onCommunity (req, res, next) {
 
 router.get('/competitions', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('competitions', {"loggedIn": true, "username" : req.user});
+    res.render('competitions', {"loggedIn": true, "username" : req.user.username});
   }
   else {
     res.render('competitions', {"loggedIn": false, "username" : "null"});
@@ -79,7 +81,7 @@ router.get('/competitions', function onCommunity (req, res, next) {
 
 router.get('/events', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('events', {"loggedIn": true, "username" : req.user});
+    res.render('events', {"loggedIn": true, "username" : req.user.username});
   }
   else {
     res.render('events', {"loggedIn": false, "username" : "null"});
@@ -88,10 +90,20 @@ router.get('/events', function onCommunity (req, res, next) {
 
 router.get('/about', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('about', {"loggedIn": true, "username" : req.user});
+    res.render('about', {"loggedIn": true, "username" : req.user.username});
   }
   else {
     res.render('about', {"loggedIn": false, "username" : "null"});
+  }
+});
+
+router.get('/profile', function onCommunity (req, res, next) {
+  console.log(req.user.username)
+  if (req.user) {
+    res.render('profile', {"loggedIn": true, "username" : req.user.username, "user": req.user});
+  }
+  else {
+    res.render('profile', {"loggedIn": false, "username" : "null"});
   }
 });
 

@@ -236,10 +236,10 @@ li{
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 16px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     color: rgba(96, 96, 96, 1.00);
     border-bottom: 1.5px solid rgba(208, 208, 208, 1.00);
 }
@@ -257,7 +257,7 @@ li{
 
 
 .comps-margin-overview {
-    margin-bottom: 12px;    
+    margin-bottom: 9px;    
     margin-left: 20px;
     margin-right: 50px;
 }
@@ -299,5 +299,34 @@ li{
         border-radius: 4px;
         background: rgba(0, 82, 155, 0.9);
     }
+
+    .event-header p {
+        text-align: center;
+        width: auto;
+        margin: auto;   
+        margin-top: 20px;
+   }
+
+    .event-header h1 {
+        text-align: center;
+        width: auto;
+        margin: auto;   
+        margin-bottom: 15px;
+
+   }
+    .event-seperator {
+        text-align: center;
+        width: auto;
+        margin: auto;   
+        margin-bottom: 30px;
+        border-bottom: 1.5px solid rgba(208, 208, 208, 0.00);
+   }
+    .sub-event-seperator {
+        text-align: center;
+        width: auto;
+        margin: auto;   
+        margin-bottom: 30px;
+        border-bottom: 1.5px solid rgba(208, 208, 208, 0.00);
+   }
  }
 

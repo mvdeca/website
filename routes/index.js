@@ -77,6 +77,15 @@ router.get('/competitions', function onCommunity (req, res, next) {
   }
 });
 
+router.get('/events', function onCommunity (req, res, next) {
+    if (req.user) {
+    res.render('events', {"loggedIn": true, "username" : req.user});
+  }
+  else {
+    res.render('events', {"loggedIn": false, "username" : "null"});
+  }
+});
+
 router.get('/about', function onCommunity (req, res, next) {
     if (req.user) {
     res.render('about', {"loggedIn": true, "username" : req.user});

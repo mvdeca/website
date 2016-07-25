@@ -41,7 +41,6 @@
 	        <li><a href="/events">Events</a></li>
 	        <li><a href="/competitions">Competitions</a></li>
 	       	<li><a href="http://bbc.mvdeca.org">Incoming Freshman</a></li>
-	       	<li><a href="/updates">Updates</a></li>
 	  		<% if (loggedIn) { %>
 	       		<li><a href="/logout">Logout</a></li>
 	       		<li><a href="/profile">Profile</a></li>
@@ -62,16 +61,15 @@
 	  </ul>
 	  <nav>
 	    <div class="nav-wrapper white z-depth-0">
-	      <a href="#!" class="brand-logo center black-text">MONTA VISTA DECA</a>
+	      <a href="/" class="brand-logo center black-text">MONTA VISTA DECA</a>
 	      <ul id="nav-mobile" class="left hide-on-med-and-down">
 	        <li><a class="nav-lis" href="/about">ABOUT</a></li>
 	        <li><a class="nav-lis" href="/community">COMMUNITY</a></li>
 	        <li><a class="nav-lis" href="/events">EVENTS</a></li>
-	       	<li><a class="nav-lis" href="/competitions">COMPETITIONS</a></li>
 	      </ul>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	      		<li><a class="nav-lis-right" href="http://bbc.mvdeca.org">INCOMING FRESHMAN</a></li>
-	      		<li><a class="nav-lis-right" href="/updates">UPDATES</a></li>
+	      	    <li><a class="nav-lis" href="/competitions">COMPETITIONS</a></li>
+	      		<li><a class="nav-lis-right" href="http://bbc.mvdeca.org"> FRESHMAN</a></li>
 	      		<% if (loggedIn) { %>
 				      <li><a class="dropdown-button" href="#!" data-activates="dropdown1"> <%= username %> <i class="material-icons right">arrow_drop_down</i></a></li>
 				<% } %>

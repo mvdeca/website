@@ -8,6 +8,10 @@ html, body {
 }
 
 
+@font-face{
+    font-family: "Myriad-Pro-Bold";  
+    src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_semibold.ttf) format("truetype");
+}
 
 @font-face{
     font-family: "Myriad-Pro";  
@@ -255,11 +259,92 @@ li{
     color: rgba(96, 96, 96, 1.00);
 }
 
+.comps-btn-header{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-right: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: rgba(96, 96, 96, 1.00);
+    border-bottom: 1.5px solid rgba(208, 208, 208, 1.00);
+}
+
+.comps-btn{
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgba(96, 96, 96, 1.00);
+}
 
 .comps-margin-overview {
     margin-bottom: 9px;    
     margin-left: 20px;
     margin-right: 50px;
+}
+
+.events-chip {
+    background-color: rgba(66, 139, 202, 1.00);
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    height: 30px;
+    border-radius: 4px;
+    margin-top: 20px;
+
+}
+
+
+.event-img {
+    margin-top: 20px;
+    margin-left: 100px;
+    background-color: rgba(240, 240, 240, 1.00);
+    height: 200px;
+    width: 200px;
+    background-image: url('/images/lace.jpg');
+    background-size: cover;
+}
+
+.event-join {
+    background-color: rgba(240, 240, 240, 1.00);
+    margin-top: -200px;
+    margin-left: 400px;
+    height: 200px;
+    width: 350px;
+    overflow: auto;
+}
+
+.join-header {
+    font-family: 'Open Sans';
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.join-subheader {
+    font-family: 'Open Sans';
+    margin-top: 8px;
+    margin-left: 15px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+
+.join-btn {
+    background-color: rgba(225, 138, 136, 1.00);
+    color: white;
+    margin-top: 40px;
+    margin-left: 24px;
+    width: 300px;
+    text-align: center;
+    vertical-align: top;
 }
 
  @media (max-width: 1024px) {
@@ -279,6 +364,10 @@ li{
         border-radius: 4px;
         background: rgba(0, 82, 155, 0.9);
     }
+    .hidable {
+        visibility: hidden;
+        display: none;
+   }
  }
 
 
@@ -328,5 +417,10 @@ li{
         margin-bottom: 30px;
         border-bottom: 1.5px solid rgba(208, 208, 208, 0.00);
    }
+   .hidable {
+        visibility: hidden;
+        display: none;
+   }
  }
+
 

@@ -131,17 +131,38 @@ html, body {
 	height: 30px;
 }
 
-.officer-images {
-    background-color: black;
-    height: 200px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-
+.officer-img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.officer-images:hover {
-    background-color: green;
+.center-div {
+  padding-left:0;
+  padding-right:0;
+  float:none;
+  margin:auto;
+}
 
+
+.officer-img h1 {
+    font-family: 'Open Sans';
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 0.016em;
+}
+
+.officer-img h2 {
+    font-family: 'Open Sans';
+    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: -20px;
+    letter-spacing: 0.016em;
+    text-align: center;
 }
 
 .img-row {
@@ -162,6 +183,28 @@ html, body {
 }
 
 .event-header p {
+    text-align: left;
+    font-family: 'Myriad-Pro';
+    font-weight: 300;
+    font-size: 17px;
+    color: black;
+    margin-right: 100px;
+    margin-bottom:30px;
+
+}
+
+.team-header h1 {
+    margin-top: 30px;
+    margin-bottom: -5px;
+    text-align: left;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 1.8px;
+    color: black;
+}
+
+.team-header p {
     text-align: left;
     font-family: 'Myriad-Pro';
     font-weight: 300;

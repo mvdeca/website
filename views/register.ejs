@@ -31,7 +31,7 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
     $("#myform").validate();
   }*/
 
-  function blurFunction() {
+  /*function blurFunction() {
     $('*').blur(function(){
          
     $("#myform").validate(
@@ -68,16 +68,16 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
           }
         }
       });
-   console.log(!($(this).valid()));
+   //console.log(!($(this).valid()));
     if(!($(this).valid())){
              $(this).focus();
              return false;
          }
      });
-  }
+  }*/
 
-  function validateForm(form) {
-    console.log("im here!");
+  function validateForm() {
+    //console.log("im here!");
     var first = document.forms["myForm"]["fname"].value;
     var uname = document.forms["myForm"]["uname"].value;
     var password = document.forms["myForm"]["pass"].value;
@@ -101,32 +101,14 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
     var address = document.forms["myForm"]["addr"].value;
     var zip = parseInt(document.forms["myForm"]["zcode"].value);
    
-    if(studentId == NaN)
-    {
-      alert("Please enter valid ID.");
-      return false;
-    }
-
-
-    if(grad == NaN || grad < 2017 || grad > 2050) //any grad year up to 2050
-    {
-      alert("Please enter a valid graduation year.");
-      return false;
-    }
-
-    
-    if(zip == NaN)
-    {
-      alert("Please enter valid ID.");
-      return false;
-    }
-    
-    console.log("goes to end");
+    //console.log("goes to end");
     return true;
   }
 
   </script>
-
+  <style type="text/css">
+ 
+  </style>
 </head>
 
 <body bgcolor="#3498db">
@@ -144,26 +126,26 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">password</label>
-          <input class="fs-anim-lower" type="password" name="pass" required/>
+          <input class="fs-anim-lower" type="password" name="pass" id="password" required/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">first name</label>
-          <input class="fs-anim-lower" type="text" name="fname" required/>
+          <input class="fs-anim-lower" type="text" name="fname" id="firstname" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">last name</label>
-          <input class="fs-anim-lower" type="text" name="lname" required/>
+          <input class="fs-anim-lower" type="text" name="lname" id="lastname" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">student id</label>
-          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="7" name="sid" required/>
+          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="7" name="sid" id="studid" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">email</label>
-          <input class="fs-anim-lower" type="email" name="em" required/>
+          <input class="fs-anim-lower" type="email" name="em" id="email" required/>
           <br/>
         </li>
         <li data-input-trigger>
@@ -178,12 +160,12 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">birthday</label>
-          <input class="fs-anim-lower" type="date" name="bday" required/>
+          <input class="fs-anim-lower" type="date" name="bday" id="birth" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">graduation year</label>
-          <input class="fs-anim-lower" type="text" name="gday" pattern="\d*" maxlength="4" required/>
+          <input class="fs-anim-lower" type="text" name="gday" pattern="\d*" maxlength="4" id="grad" required/>
           <br/>
         </li>
         <li>
@@ -203,7 +185,7 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">cellphone number</label>
-          <input class="fs-anim-lower" type="text" pattern="\d*" name="cnum" required/>
+          <input class="fs-anim-lower" type="text" pattern="\d*" name="cnum" id="cnm" required/>
           <br/>
         </li>
         <li>
@@ -248,27 +230,27 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Parent's first name</label>
-          <input class="fs-anim-lower" type="text" name="pfn" required/>
+          <input class="fs-anim-lower" type="text" name="pfn" id="parfirst" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Parent's last name</label>
-          <input class="fs-anim-lower" type="text" name="pln" required/>
+          <input class="fs-anim-lower" type="text" name="pln" id="parlast" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Relationship to student</label>
-          <input class="fs-anim-lower" type="text" name="r" required/>
+          <input class="fs-anim-lower" type="text" name="r" id="therel" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Parent's email</label>
-          <input class="fs-anim-lower" type="email" name="pm" required/>
+          <input class="fs-anim-lower" type="email" name="pm" id="parem" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Parent's phone</label>
-          <input class="fs-anim-lower" type="text" pattern="\d*" name="hp" required/>
+          <input class="fs-anim-lower" type="text" pattern="\d*" name="hp" id="parphone" required/>
           <br/>
         </li>
         <li>
@@ -288,12 +270,12 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Home address</label>
-          <input class="fs-anim-lower" type="text" name="addr" required/>
+          <input class="fs-anim-lower" type="text" name="addr" id="home" required/>
           <br/>
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Zip code </label>
-          <input class="fs-anim-lower" type="text" pattern="[0-9]*" maxlength="5" name="zcode" required/>
+          <input class="fs-anim-lower" type="text" pattern="[0-9]*" maxlength="5" id="zippy" name="zcode" required/>
           <br/>
         </li>
       </ol>  

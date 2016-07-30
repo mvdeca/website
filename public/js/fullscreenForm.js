@@ -1,17 +1,22 @@
-/**
- * fullscreenForm.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2014, Codrops
- * http://www.codrops.com
- */
+
 ;( function( window ) {
 	
 	'use strict';
-
+	var count;
+	var IDs;
+	$(document).ready(function(){
+		count = 0;
+		IDs = [];
+		//$("#fs-form-wrap").find("input").each(function(){ IDs.push(this.id); });
+		var everyID = document.querySelectorAll("#fs-form-wrap input");
+		//console.log(everyID);
+		for (var i = 0; i<everyID.length; i++) {
+		    var id = String(everyID[i].id);
+		    IDs.push(id);
+		}
+		console.log(IDs);
+	}) 
+	
 	var support = { animations : Modernizr.cssanimations },
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		// animation end event name
@@ -70,7 +75,7 @@
 		// show [current field]/[total fields] status
 		ctrlNavPosition : true,
 		// reached the review and submit step
-		onReview : function() { return false; }
+		//onReview : function() { return false; }
 	};
 
 	/**
@@ -133,6 +138,8 @@
 		// field number status
 		if( this.options.ctrlNavPosition ) {
 			this.ctrlFldStatus = createElement( 'span', { cName : 'fs-numbers', appendTo : this.ctrls } );
+			this.ctrlFldStatus.style.right = "5%";
+			this.ctrlFldStatus.style.width = "78px";
 
 			// current field placeholder
 			this.ctrlFldStatusCurr = createElement( 'span', { cName : 'fs-number-current', inner : Number( this.current + 1 ) } );
@@ -167,8 +174,120 @@
 		var self = this;
 
 		// show next field
-		this.ctrlContinue.addEventListener( 'click', function() {
-			self._nextField(); 
+		this.ctrlContinue.addEventListener( 'click', function(ev) {
+			var validator = $("#myform").validate({
+				        rules: 
+				        {
+				          field:
+				          {
+				          	required: true,
+				          },
+				          sid:
+				          {
+				            maxlength: 10,
+				            digits: true,
+				          },
+				          cnum:
+				          {
+				          	maxlength: 8,
+				            digits: true,
+				          },
+				          hp:
+				          {
+				          	maxlength: 8,
+				            digits: true,
+				          },
+				          gday:
+				          {
+				            digits: true,
+				          },
+				          zcode:
+				          {
+				          	maxlength: 5,
+				            digits: true,				            
+				          },
+				          message:
+				          {
+				            rangelength:[50,1050]
+				          },
+				        },
+				        errorPlacement: function(error, element) 
+				        {
+				        	//console.log(element.is(":radio"));
+				            if(element.attr("type") == "radio") 
+				            {
+								error.insertBefore(element);				            }
+				            else 
+				            { // This is the default behavior 
+				                error.insertAfter(element);
+				            }
+				         }
+				      });
+					var isValid = validator.element(document.getElementById(IDs[count]));
+				   //console.log(!($(this).valid()));
+				   //console.log($(':focus'));
+				   //console.log(!isValid);
+				    if(!(isValid))
+				    {
+				        $(document.getElementById(IDs[count])).focus();
+				        //return false;
+				    }	
+				    else
+				    {
+				    	if(count != (IDs.length-1))
+				    	{
+					    	//console.log(document.getElementById(IDs[count]).getAttribute("type") == "radio")
+					    	if(document.getElementById(IDs[count]).getAttribute("type") == "radio")
+					    	{
+					    		count+=3; //skips the other radio buttons that were saved as IDs
+					    	}
+					    	else
+					    	{
+					    		count+=1; 
+					    	}
+					    	console.log(IDs[count]);				
+							ev.preventDefault();
+							validator.resetForm();
+							self._nextField();
+						}
+						else
+						{
+							var first = document.forms["myForm"]["fname"].value;
+						    var usrname = document.forms["myForm"]["uname"].value;
+						    var password = document.forms["myForm"]["pass"].value;
+						    var last = document.forms["myForm"]["lname"].value;
+						    var studentId = document.forms["myForm"]["sid"].value;
+						    var email = document.forms["myForm"]["em"].value;
+						    var gender = document.forms["myForm"]["gender"].value;
+						    var theday = document.forms["myForm"]["bday"].value;
+						    var grad = document.forms["myForm"]["gday"].value;
+						    var status = document.forms["myForm"]["stat"].value;
+						    var cell = document.forms["myForm"]["cnum"].value;
+						    var texting = document.forms["myForm"]["text"].value;
+						    var tshirt = document.forms["myForm"]["shirt"].value;
+						    var pfirst = document.forms["myForm"]["pfn"].value;
+						    var plast = document.forms["myForm"]["pln"].value;
+						    var relation = document.forms["myForm"]["r"].value;
+						    var pemail = document.forms["myForm"]["pm"].value;
+						    var pphone = document.forms["myForm"]["hp"].value;
+						    var pupdate = document.forms["myForm"]["udate"].value;
+						    var address = document.forms["myForm"]["addr"].value;
+						    var zip = document.forms["myForm"]["zcode"].value;
+						    /*req.body.uname, req.body.pass, req.body.fname,
+						     req.body.lname, req.body.sid, req.body.em, req.body.mf,
+						      req.body.bday, req.body.gday, req.body.stat, req.body.cnum, 
+						      req.body.text, req.body.shirt, req.body.pfn, req.body.pln,
+						       req.body.r, req.body.pm, req.body.pp, req.body.udate, 
+						       req.body.addr, req.body.zcode*/
+						    //console.log("goes to end");
+
+						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
+						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
+							 $.post("/register", data, function(response) { alert(response);}, 'json');
+							 console.log("GOT THROUGH post");
+						}
+					}
+			//self._nextField(); 
 		} );
 
 		// navigation dots
@@ -191,11 +310,11 @@
 						input.addEventListener( 'change', function() { self._nextField(); } );
 						break;
 
-					case 'input' : 
+					/*case 'input' : 
 						[].slice.call( fld.querySelectorAll( 'input[type="radio"]' ) ).forEach( function( inp ) {
 							inp.addEventListener( 'change', function(ev) { self._nextField(); } );
 						} ); 
-						break;
+						break;*/
 
 					/*
 					// for our custom select we would do something like:
@@ -211,7 +330,7 @@
 
 		// keyboard navigation events - jump to next field when pressing enter
 		document.addEventListener( 'keydown', function( ev ) {
-			if( !self.isLastStep && ev.target.tagName.toLowerCase() !== 'textarea' ) {
+			if( !self.isLastStep && ev.target.tagName.toLowerCase() !== 'textarea') {
 				var keyCode = ev.keyCode || ev.which;
 				if( keyCode === 13 ) {
 				//var $focused = $(':focus');
@@ -230,13 +349,13 @@
 				          },
 				          cnum:
 				          {
+				          	maxlength: 8,
 				            digits: true,
-				            maxlength: 8,
 				          },
 				          hp:
 				          {
+				          	maxlength: 8,
 				            digits: true,
-				            maxlength: 8,
 				          },
 				          gday:
 				          {
@@ -244,8 +363,8 @@
 				          },
 				          zcode:
 				          {
-				            digits: true,
 				            maxlength: 5,
+				            digits: true,
 				          },
 				          message:
 				          {
@@ -257,27 +376,89 @@
 				        	//console.log(element.is(":radio"));
 				            if(element.attr("type") == "radio") 
 				            {
-								error.insertBefore(element);				            }
+								error.insertBefore(element);
+							}
 				            else 
 				            { // This is the default behavior 
 				                error.insertAfter(element);
 				            }
-				         }
+				        }
 				      });
-					var isValid = validator.element(document.activeElement);
+					var isValid = validator.element(document.getElementById(IDs[count]));
 				   //console.log(!($(this).valid()));
 				   //console.log($(':focus'));
-				   console.log(!isValid);
+				   //console.log(!isValid);
 				    if(!(isValid))
 				    {
-				        $(document.activeElement).focus();
+				        $(document.getElementById(IDs[count])).focus();
 				        //return false;
 				    }	
 				    else
-				    {		
-						ev.preventDefault();
-						validator.resetForm();
-						self._nextField();
+				    {
+				    	if(count != (IDs.length-1))
+				    	{
+					    	//console.log(document.getElementById(IDs[count]).getAttribute("type") == "radio")
+					    	if(document.getElementById(IDs[count]).getAttribute("type") == "radio")
+					    	{
+					    		if((document.getElementById(IDs[count]).getAttribute("name") == "gender"))
+					    		{
+					    			count+=3; //skips the other radio buttons that were saved as IDs
+					    		}
+					    		else if((document.getElementById(IDs[count]).getAttribute("name") == "text") || (document.getElementById(IDs[count]).getAttribute("name") == "udate") || (document.getElementById(IDs[count]).getAttribute("name") == "stat"))
+					    		{
+					    			count+=2; //skips the other radio buttons that were saved as IDs
+					    		}
+					    		else if((document.getElementById(IDs[count]).getAttribute("name") == "shirt"))
+					    		{
+					    			count+=4; //skips the other radio buttons that were saved as IDs
+					    		}
+					    	}
+					    	else
+					    	{
+					    		count+=1; 
+					    	}
+					    	console.log(IDs[count]);				
+							ev.preventDefault();
+							validator.resetForm();
+							self._nextField();
+						}
+						else
+						{
+							var first = document.forms["myForm"]["fname"].value;
+						    var usrname = document.forms["myForm"]["uname"].value;
+						    var password = document.forms["myForm"]["pass"].value;
+						    var last = document.forms["myForm"]["lname"].value;
+						    var studentId = document.forms["myForm"]["sid"].value;
+						    var email = document.forms["myForm"]["em"].value;
+						    var gender = document.forms["myForm"]["gender"].value;
+						    var theday = document.forms["myForm"]["bday"].value;
+						    var grad = document.forms["myForm"]["gday"].value;
+						    var status = document.forms["myForm"]["stat"].value;
+						    var cell = document.forms["myForm"]["cnum"].value;
+						    var texting = document.forms["myForm"]["text"].value;
+						    var tshirt = document.forms["myForm"]["shirt"].value;
+						    var pfirst = document.forms["myForm"]["pfn"].value;
+						    var plast = document.forms["myForm"]["pln"].value;
+						    var relation = document.forms["myForm"]["r"].value;
+						    var pemail = document.forms["myForm"]["pm"].value;
+						    var pphone = document.forms["myForm"]["hp"].value;
+						    var pupdate = document.forms["myForm"]["udate"].value;
+						    var address = document.forms["myForm"]["addr"].value;
+						    var zip = document.forms["myForm"]["zcode"].value;
+						    /*req.body.uname, req.body.pass, req.body.fname,
+						     req.body.lname, req.body.sid, req.body.em, req.body.mf,
+						      req.body.bday, req.body.gday, req.body.stat, req.body.cnum, 
+						      req.body.text, req.body.shirt, req.body.pfn, req.body.pln,
+						       req.body.r, req.body.pm, req.body.pp, req.body.udate, 
+						       req.body.addr, req.body.zcode*/
+						    //console.log("goes to end");
+						    console.log(usrname);
+						    console.log(req.body.uname);
+						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
+						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
+							 $.post("/register", data, function(response) { alert(response);}, 'json');
+							 console.log("GOT THROUGH post");
+						}
 					}
 				}
 			}
@@ -353,11 +534,13 @@
 					self._hideCtrl( self.ctrlContinue );
 					self._hideCtrl( self.ctrlFldStatus );
 					// replace class fs-form-full with fs-form-overview
-					classie.remove( self.formEl, 'fs-form-full' );
-					classie.add( self.formEl, 'fs-form-overview' );
-					classie.add( self.formEl, 'fs-show' );
+					//classie.remove( self.formEl, 'fs-form-full' );
+					//classie.add( self.formEl, 'fs-form-overview' );
+					//classie.add( self.formEl, 'fs-show' );
 					// callback
-					self.options.onReview();
+					//self.options.onReview();
+					
+				    //window.location.href = "index.html";
 				}
 				else {
 					classie.remove( nextField, 'fs-show' );
@@ -369,6 +552,7 @@
 					}
 				}
 				self.isAnimating = false;
+				$(document.getElementById(IDs[count])).focus();
 			};
 
 		if( support.animations ) {
@@ -386,7 +570,9 @@
 		}
 		else {
 			onEndAnimationFn();
+
 		}
+		
 	}
 
 	/**
@@ -398,6 +584,7 @@
 			return false;
 		}
 		this._nextField( pos );
+
 	}
 
 	/**

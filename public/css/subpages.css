@@ -78,6 +78,32 @@ html, body {
     background: rgba(0, 82, 155, 0.9);
 }
 
+.events-header {
+    background-color: #000000;
+    height: 50vh;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/competitions.jpg');
+    background-size: cover;
+}
+
+.events-header-text {
+    margin: auto;
+    text-align: center;
+    font-family: 'Myriad-Pro';
+    font-size: 6vw;
+    margin-left: auto;
+    color: #FFFFFF;
+    letter-spacing: 0.016em;
+    margin-top: 120px;
+    overflow: auto;
+
+
+    width: 30%;
+    border-radius: 4px;
+    background: rgba(0, 82, 155, 0.9);
+}
 
 .table-of-contents {
 	background-color: white;
@@ -105,17 +131,38 @@ html, body {
 	height: 30px;
 }
 
-.officer-images {
-    background-color: black;
-    height: 200px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-
+.officer-img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.officer-images:hover {
-    background-color: green;
+.center-div {
+  padding-left:0;
+  padding-right:0;
+  float:none;
+  margin:auto;
+}
 
+
+.officer-img h1 {
+    font-family: 'Open Sans';
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 0.016em;
+}
+
+.officer-img h2 {
+    font-family: 'Open Sans';
+    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: -20px;
+    letter-spacing: 0.016em;
+    text-align: center;
 }
 
 .img-row {
@@ -136,6 +183,28 @@ html, body {
 }
 
 .event-header p {
+    text-align: left;
+    font-family: 'Myriad-Pro';
+    font-weight: 300;
+    font-size: 17px;
+    color: black;
+    margin-right: 100px;
+    margin-bottom:30px;
+
+}
+
+.team-header h1 {
+    margin-top: 30px;
+    margin-bottom: -5px;
+    text-align: left;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 1.8px;
+    color: black;
+}
+
+.team-header p {
     text-align: left;
     font-family: 'Myriad-Pro';
     font-weight: 300;
@@ -307,9 +376,39 @@ li{
     background-color: rgba(240, 240, 240, 1.00);
     height: 200px;
     width: 200px;
-    background-image: url('/images/lace.jpg');
     background-size: cover;
 }
+
+#event-lace {
+    background-image: url('/images/events/lace.jpg');
+}
+#event-svcdc {
+    background-image: url('/images/events/svcdc.jpg');
+}
+
+#event-scdc {
+    background-image: url('/images/events/states.jpg');
+}
+
+#event-icdc {
+    background-image: url('/images/events/icdc.jpg');
+}
+
+#event-fr {
+    background-image: url('/images/events/fr.jpg');
+}
+
+#event-sf {
+    background-image: url('/images/events/francis.jpg');
+}
+
+#event-fidm {
+    background-color: white;
+    background-image: url('/images/events/fidm.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 
 .event-join {
     background-color: rgba(240, 240, 240, 1.00);
@@ -347,6 +446,44 @@ li{
     vertical-align: top;
 }
 
+
+.user-data h1{
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.016em;
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 100px;
+    text-align: left;
+}
+
+.user-data p {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.016em;
+}
+
+.user-data h3 {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.009em;
+    font-weight: 600;
+    font-size: 20px;
+}
+.user-data span {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.009em;
+    font-weight: 600;
+    font-size: 14px;
+}
+.user-data ul {
+    color: black;
+    font-family: 'Open Sans';
+    letter-spacing:  0.009em;
+    font-weight: 300;
+    font-size: 14px;
+}
  @media (max-width: 1024px) {
     .competition-header-text {
         margin: auto;
@@ -364,6 +501,24 @@ li{
         border-radius: 4px;
         background: rgba(0, 82, 155, 0.9);
     }
+
+    .events-header-text {
+        margin: auto;
+        text-align: center;
+        font-family: 'Myriad-Pro';
+        font-size: 8vw;
+        margin-left: auto;
+        color: #FFFFFF;
+        letter-spacing: 0.016em;
+        margin-top: 120px;
+        overflow: auto;
+
+
+        width: 50%;
+        border-radius: 4px;
+        background: rgba(0, 82, 155, 0.9);
+    }
+
     .hidable {
         visibility: hidden;
         display: none;
@@ -385,6 +540,23 @@ li{
 
 
         width: 90%;
+        border-radius: 4px;
+        background: rgba(0, 82, 155, 0.9);
+    }
+
+    .events-header-text {
+        margin: auto;
+        text-align: center;
+        font-family: 'Myriad-Pro';
+        font-size: 10vw;
+        margin-left: auto;
+        color: #FFFFFF;
+        letter-spacing: 0.016em;
+        margin-top: 120px;
+        overflow: auto;
+
+
+        width: 70%;
         border-radius: 4px;
         background: rgba(0, 82, 155, 0.9);
     }

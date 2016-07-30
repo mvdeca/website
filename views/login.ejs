@@ -30,6 +30,7 @@
       var p = document.forms["logform"]["pss"].value;
       var data = {"username":u, "password": p};
       $.post("/login", data, function(response) { alert(response);}, 'json');
+      //window.location.href = "/";
     }
 
 

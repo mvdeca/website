@@ -523,6 +523,19 @@ li{
         visibility: hidden;
         display: none;
    }
+   .team-header h1 {
+      text-align: center;
+   }
+    .team-header p {
+      text-align: center;
+      margin: auto;
+      margin-top: 25px; 
+      margin-bottom: 25px; 
+   }
+   .about-header-text {
+        font-size: 10vw;
+        width: 75%;
+   }
  }
 
 
@@ -592,6 +605,20 @@ li{
    .hidable {
         visibility: hidden;
         display: none;
+   }
+
+   .team-header h1 {
+      text-align: center;
+   }
+    .team-header p {
+      text-align: center;
+      margin: auto;
+      margin-top: 25px; 
+      margin-bottom: 25px; 
+   }
+   .about-header-text {
+        font-size: 14vw;
+        width: 80%;
    }
  }
 

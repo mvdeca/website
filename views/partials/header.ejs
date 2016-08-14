@@ -46,7 +46,7 @@
 	       		<li><a href="/profile">Profile</a></li>
 			<% } %>
 	  		<% if (!loggedIn) { %>
-	  			<li><a href="/login">Sign In</a></li>
+	  			<li><a  class="modal-trigger" href="#signin">Sign In</a></li>
 			<% } %>
 	    </div>
 	  </nav>
@@ -74,13 +74,36 @@
 				      <li><a class="dropdown-button" href="#!" data-activates="dropdown1"> <%= username %> <i class="material-icons right">arrow_drop_down</i></a></li>
 				<% } %>
 	      		<% if (!loggedIn) { %>
-					<li><a class="waves-effect waves-light btn-flat btn-flat-bordered " href="/login">Sign In</i></a></li>
+					<li><a class="waves-effect waves-light btn-flat btn-flat-bordered modal-trigger" href="#signin">Sign In</i></a></li>
 				<% } %>
 	      </ul>
 	    </div>
 	  </nav>
 	</div>
+	
 
+	<div id="signin" class="modal signer">
+	    <div class="modal-content">
+	      <h1 class="sign-in-header"> <span>MV</span>DECA</h1>
+		  <form action="/login" method="post"> 
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="username" type="text" name="username">
+		          <label for="username">Username</label>
+		        </div>
+		        <div class="input-field col s12">
+		          <input id="password" type="password" name="password">
+		          <label for="password">Password</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		      	<div class="col s12"> 
+					<a class="btn login-button z-depth-0" type="submit" value="Submit">Login</a>
+		      	</div>
+		      </div>
+		  </form>
+	    </div>
+  	</div>
 
 
 
@@ -89,7 +112,7 @@
 	  <script type="text/javascript">	  	
 		$( document ).ready(function(){
   			$(".button-collapse").sideNav();
-
+  			$('.modal-trigger').leanModal();
 			$('.dropdown-button').dropdown({
 			      inDuration: 300,
 			      outDuration: 225,

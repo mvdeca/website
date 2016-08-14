@@ -503,7 +503,7 @@ li{
     color: #9F9F9F;
 }
 .footer-seperator {
-    background-color: #185FA3;
+    background-color: #0F5A9E;
     height: 10px;
     width: 100%;
 }
@@ -515,14 +515,36 @@ li{
 }
 
 .footer-icons {
-    margin-top: -18px;
+    margin-top: -12px;
     text-align: center;
     color: white;
     font-size: 32px;
 }
 
+.sign-in-header {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 26px;
+    letter-spacing: 1.2px;
+    color: #0F5A9E;
+}
 
+.sign-in-header span {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 0.8px;
+    color: #0F5A9E;
+}
+.signer {
+    width: 30%;
+}
 
+.login-button {
+    width: 100%;
+}
 
 
 
@@ -585,6 +607,9 @@ li{
         width: 75%;
    }
  }
+
+
+
 
 
 @media (max-width: 600px) {

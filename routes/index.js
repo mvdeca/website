@@ -24,11 +24,18 @@ router.get('/login', function atLogin (req, res, next) {
 });
 
 //login verification route
-router.post('/login',
+/*router.post('/login',
   passport.authenticate('local', { 
     successRedirect: '/',
     failureRedirect: '/login'
-}));
+}));*/
+
+router.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    console.log("---------------------");
+    console.log(req.user);
+  });
 
 //create a user route
 router.get('/register', function onRegister (req, res, next) {

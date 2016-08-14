@@ -607,6 +607,9 @@ li{
         font-size: 10vw;
         width: 75%;
    }
+    .signer {
+        width: 50%;
+    }
  }
 
 
@@ -694,6 +697,10 @@ li{
         font-size: 14vw;
         width: 80%;
    }
+    
+    .signer {
+        width: 90%;
+    }
  }
 
 

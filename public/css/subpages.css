@@ -540,6 +540,7 @@ li{
 }
 .signer {
     width: 30%;
+    margin-top: 100px;
 }
 
 .login-button {

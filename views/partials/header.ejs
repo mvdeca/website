@@ -12,7 +12,35 @@
     <link rel="stylesheet" type="text/css" href="css/materialize/materialize.min.css" media="screen" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/plugins.min.js"></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
     <script src="js/materialize.min.js"></script>
+    <script type="text/javascript">
+	    function postForm() {
+	      var u = document.forms["logform"]["usr"].value;
+	      var p = document.forms["logform"]["pss"].value;
+	      var data = {"username":u, "password": p};
+	      var ts = " "
+	      //console.log(data)
+	      $(function() {
+        	$.post('/login', data, function(data, textStatus)
+        	{	
+        		ts = textStatus;
+        		if (textStatus == "success") {
+   			    	location.reload();
+        		}
+        	});
+        	setTimeout(
+        		function(){  
+        			if (ts != "success") {
+		  				Materialize.toast('Invalid username or password', 4000)
+		  			} 
+		  		}, 
+		  	300)
+		 
+		  });
+	    }
+    </script>
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -85,20 +113,20 @@
 	<div id="signin" class="modal signer">
 	    <div class="modal-content">
 	      <h1 class="sign-in-header"> <span>MV</span>DECA</h1>
-		  <form action="/login" method="post"> 
+		  <form class="login-form" name="logform" onsubmit="postForm()" method="post"> 
 		      <div class="row">
 		        <div class="input-field col s12">
-		          <input id="username" type="text" name="username">
+		          <input id="username" type="text" name="usr">
 		          <label for="username">Username</label>
 		        </div>
 		        <div class="input-field col s12">
-		          <input id="password" type="password" name="password">
+		          <input  id="password" type="password" name="pss">
 		          <label for="password">Password</label>
 		        </div>
 		      </div>
 		      <div class="row">
 		      	<div class="col s12"> 
-					<a class="btn login-button z-depth-0" type="submit" value="Submit">Login</a>
+					<a class="btn login-button z-depth-0" onclick="postForm()" type="submit">Login</a>
 		      	</div>
 		      </div>
 		  </form>
@@ -124,5 +152,6 @@
 			});
 			$('.scrollspy').scrollSpy();
 		})
+
 	  </script>
   </div>

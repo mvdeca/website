@@ -1,5 +1,40 @@
 <html>
+<head>
+  <link href="/css/materialize/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="/css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="/css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js"></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+    <style type="text/css">
+    @font-face{ 
+        font-family: "Myriad-Pro";  
+        src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_thin.ttf) format("truetype");
+    }
+    @font-face{
+        font-family: "Myriad-Pro-light";  
+        src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_ultralight.ttf) format("truetype");
+    }
+    html{
+      font-family: "Myriad-Pro",Fallback, sans-serif;
+    }
+    </style>
+
+    <script type="text/javascript">
+    function postForm() {
+      var u = document.forms["logform"]["usr"].value;
+      var p = document.forms["logform"]["pss"].value;
+      var data = {"username":u, "password": p};
+      $.post("/login", data, function(response) { alert(response);}, 'json');
+    }
+    </script>
+</head>
+
   <body>
+   <!-- <div id="back">
     <form action="/login" method="post">
       <div>
         <label>Username:</label>
@@ -12,7 +47,60 @@
       </div>
       <div>
         <input type="submit" value="Submit" />
-      </div>
-    </form>
+      </div> 
+    </form> -->
+    <div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel" style="background-color: rgba(255,255,255,0.8);">
+      <form class="login-form" name="logform" onsubmit="postForm()" method="post">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <img src="images/squarebull.png" alt="" class="circle responsive-img valign profile-image-login">
+            <p class="center login-form-text">Member Login</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="username" type="text" name="usr">
+            <label for="username" class="center-align">Username</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">https</i>
+            <input id="password" type="password" name="pss">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row">          
+          <div class="input-field col s12 m12 l12  login-text">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Remember me</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+             <button type="submit" class="btn waves-effect waves-light col s12">Login</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 m6 l6">
+            <p class="margin medium-small"><a href="/register">Register Now!</a></p>
+          </div>
+          <div class="input-field col s6 m6 l6">
+              <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password?</a></p>
+          </div>          
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+      <script type="text/javascript" src="/js/prism.js"></script>
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+      <script type="text/javascript" src="/js/plugins.min.js"></script>
+
   </body>
 </html>

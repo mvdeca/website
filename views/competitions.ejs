@@ -90,7 +90,7 @@
 			<div class="sub-event-seperator"></div>	 
 
 			<div class="event-header" id="tdm"> 
-	      		<h1> TEAM DESICION MAKING </h1>
+	      		<h1> TEAM DECISION MAKING </h1>
 	      		<p>Team Decisions Making events are team roleplay events that involve 2 members working together during the presentation. Teams receive 30 minute to break down a case study and create a solution for the problem at hand.</p>
 	      	</div>
 			<div class="tabl hide-on-med-and-down"> 
@@ -482,9 +482,17 @@
 	</div>	
     </body>
 
+    <%include partials/footer%>
+
     <script type="text/javascript">
 		$(document).ready(function(){
-				$('.row .table-of-contents').pushpin({ top: $('.row .table-of-contents').offset().top });
+				console.log($("footer").offset().top);
+				$('.row .table-of-contents').pushpin(
+				{ 
+					top: $('.table-of-contents').offset().top, 
+					bottom: $("footer").offset().top - $('.table-of-contents').height()
+
+				});
 		});
 
 		$(function() {

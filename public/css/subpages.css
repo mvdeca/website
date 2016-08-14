@@ -484,6 +484,48 @@ li{
     font-weight: 300;
     font-size: 14px;
 }
+
+.footer-text {
+    text-align: center;
+    font-family: 'Myriad-Pro';
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #9F9F9F;
+}
+
+.footer-subtext {
+    text-align: center;
+    font-family: 'Myriad-Pro';
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #9F9F9F;
+}
+.footer-seperator {
+    background-color: #267CCA;
+    height: 10px;
+    width: 100%;
+}
+.my-footer {
+    overflow: auto;
+    background-color: #2A2A2A;
+    width: 100%;
+    height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
  @media (max-width: 1024px) {
     .competition-header-text {
         margin: auto;

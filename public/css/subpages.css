@@ -503,26 +503,24 @@ li{
     color: #9F9F9F;
 }
 .footer-seperator {
-    background-color: #267CCA;
+    background-color: #185FA3;
     height: 10px;
     width: 100%;
 }
 .my-footer {
-    overflow: auto;
+    overflow: hidden;
     background-color: #2A2A2A;
     width: 100%;
     height: 200px;
 }
 
 .footer-icons {
+    margin-top: -18px;
     text-align: center;
-    margin-top: 15px;
     color: white;
+    font-size: 32px;
 }
 
-i {
-  margin-right: 20px;
-}
 
 
 
@@ -677,7 +675,7 @@ i {
 
 
 
- 
+
 
  @font-face {
     font-family: 'Mono Social Icons Font';

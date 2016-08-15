@@ -769,5 +769,27 @@ a.symbol:before {
     font-size: 130%;
 }
 
+.profile-text {
+    color: black;
+}
+
+.profile-header h1 {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 50px;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.profile-header p {
+    text-align: center;
+    font-family: 'Open Sans';
+    margin-bottom: 50px;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: black;
+}
 
 

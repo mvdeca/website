@@ -31,10 +31,14 @@
         		}
         	});
         	setTimeout(
-        		function(){  
-        			if (ts != "success") {
-		  				Materialize.toast('Invalid username or password', 4000)
+        		function(){ 
+
+        			if (ts == "success") {
+        				console.log("success");
 		  			} 
+		  			else {
+		  				Materialize.toast('Invalid username or password', 4000)
+		  			}
 		  		}, 
 		  	300)
 		 

@@ -7,9 +7,12 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
-
+var nodemailer = require('nodemailer');
 var routes = require('./routes/index');
 var DB = require('./userModels/userSchema');
+var sgTransport = require('nodemailer-sendgrid-transport');
+
+
 
 var app = express();
 

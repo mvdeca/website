@@ -184,17 +184,17 @@
 				          },
 				          sid:
 				          {
-				            maxlength: 10,
+				            maxlength: 7,
 				            digits: true,
 				          },
 				          cnum:
 				          {
-				          	maxlength: 8,
+				          	maxlength: 10,
 				            digits: true,
 				          },
 				          hp:
 				          {
-				          	maxlength: 8,
+				          	maxlength: 10,
 				            digits: true,
 				          },
 				          gday:
@@ -349,12 +349,12 @@
 				          },
 				          cnum:
 				          {
-				          	maxlength: 8,
+				          	maxlength: 10,
 				            digits: true,
 				          },
 				          hp:
 				          {
-				          	maxlength: 8,
+				          	maxlength: 10,
 				            digits: true,
 				          },
 				          gday:
@@ -453,7 +453,7 @@
 						       req.body.addr, req.body.zcode*/
 						    //console.log("goes to end");
 						    console.log(usrname);
-						    console.log(req.body.uname);
+						    //console.log(req.body.uname);
 						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');

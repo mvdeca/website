@@ -11,13 +11,12 @@
 
     <style type="text/css">
     @font-face{ 
-        font-family: "Myriad-Pro";  
-        src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_thin.ttf) format("truetype");
+        font-family: "Myriad-Pro";  
+        src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_thin.ttf) format("truetype");
     }
-
     @font-face{
-        font-family: "Myriad-Pro-light";  
-        src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_ultralight.ttf) format("truetype");
+        font-family: "Myriad-Pro-light";  
+        src: url(/fonts/Myriad-Set-Pro/myriad-set-pro_ultralight.ttf) format("truetype");
     }
     html{
       font-family: "Myriad-Pro",Fallback, sans-serif;
@@ -31,8 +30,6 @@
       var data = {"username":u, "password": p};
       $.post("/login", data, function(response) { alert(response);}, 'json');
     }
-
-
     </script>
 </head>
 

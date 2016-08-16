@@ -95,7 +95,23 @@ h1 {
 }
 
 
+.major-text {
+    margin-left: 80px;
+    margin-right: 750px;
+}
+.major-text-2 {
+    margin-left: 700px;
+    margin-right: 100px;
+}
+.major-text-3 {
+    margin-left: 60px;
+    margin-right: 800px;
 
+}
+
+.c-subheader a:hover {
+   text-decoration: underline; 
+}
 #competitions {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/competitions.jpg');
     background-size: cover;
@@ -276,6 +292,21 @@ h1 {
         letter-spacing: normal;
      }
 
+    .major-text {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    .major-text-2 {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    .major-text-3 {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
 }
 @media (max-width: 600px) {
     #header-img {
@@ -320,6 +351,21 @@ h1 {
         color: #000000;
         letter-spacing: normal;
      }
+    .major-text {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    .major-text-2 {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    .major-text-3 {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
 
     #competitions {
         background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/competitions.jpg');

@@ -18,8 +18,8 @@ else {
 }
 
 var UserSchema = new Schema ({
-    username: { type: String, required: true, index: { unique: true } },
-    password: { type: String, required: true },
+    username: { type: String},
+    password: { type: String},
     firstname: {type: String},
     lastname: {type: String},
     student_id: { type: String },

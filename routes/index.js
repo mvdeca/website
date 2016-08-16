@@ -18,17 +18,24 @@ function isAuth (req, res, next) {  //middleware to check if the user is logged 
 //login web page route
 router.get('/login', function atLogin (req, res, next) {
     if (req.user) {
-      res.redirect('/logout');
+      res.redirect('/');
     }
   	res.render('login');
 });
 
 //login verification route
-router.post('/login',
+/*router.post('/login',
   passport.authenticate('local', { 
     successRedirect: '/',
     failureRedirect: '/login'
-}));
+}));*/
+
+router.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    console.log(req.user);
+    res.send('hello world');
+});
 
 //create a user route
 router.get('/register', function onRegister (req, res, next) {
@@ -47,7 +54,7 @@ router.post('/register', function whenRegister(req, res, next) {
 //logout session kill route
 router.get('/logout', function atLogout (req, res) {
   req.session.destroy(function (err) {
-    res.redirect('/login');
+    res.redirect('/');
   });
 });
 

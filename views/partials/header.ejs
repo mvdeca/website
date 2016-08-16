@@ -12,7 +12,39 @@
     <link rel="stylesheet" type="text/css" href="css/materialize/materialize.min.css" media="screen" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/plugins.min.js"></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
     <script src="js/materialize.min.js"></script>
+    <script type="text/javascript">
+	    function postForm() {
+	      var u = document.forms["logform"]["usr"].value;
+	      var p = document.forms["logform"]["pss"].value;
+	      var data = {"username":u, "password": p};
+	      var ts = " "
+	      //console.log(data)
+	      $(function() {
+        	$.post('/login', data, function(data, textStatus)
+        	{	
+        		ts = textStatus;
+        		if (textStatus == "success") {
+   			    	location.reload();
+        		}
+        	});
+        	setTimeout(
+        		function(){ 
+
+        			if (ts == "success") {
+        				console.log("success");
+		  			} 
+		  			else {
+		  				Materialize.toast('Invalid username or password', 4000)
+		  			}
+		  		}, 
+		  	300)
+		 
+		  });
+	    }
+    </script>
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -46,7 +78,7 @@
 	       		<li><a href="/profile">Profile</a></li>
 			<% } %>
 	  		<% if (!loggedIn) { %>
-	  			<li><a href="/login">Sign In</a></li>
+	  			<li><a  class="modal-trigger" href="#signin">Sign In</a></li>
 			<% } %>
 	    </div>
 	  </nav>
@@ -74,13 +106,44 @@
 				      <li><a class="dropdown-button" href="#!" data-activates="dropdown1"> <%= username %> <i class="material-icons right">arrow_drop_down</i></a></li>
 				<% } %>
 	      		<% if (!loggedIn) { %>
-					<li><a class="waves-effect waves-light btn-flat btn-flat-bordered " href="/login">Sign In</i></a></li>
+					<li><a class="waves-effect waves-light btn-flat btn-flat-bordered modal-trigger" href="#signin">Sign In</i></a></li>
 				<% } %>
 	      </ul>
 	    </div>
 	  </nav>
 	</div>
+	
 
+	<div id="signin" class="modal signer">
+	    <div class="modal-content">
+	      <h1 class="sign-in-header"> <span>MV</span>DECA</h1>
+		  <form class="login-form" name="logform" onsubmit="postForm()" method="post"> 
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="username" type="text" name="usr">
+		          <label for="username">Username</label>
+		        </div>
+		        <div class="input-field col s12">
+		          <input  id="password" type="password" name="pss">
+		          <label for="password">Password</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		      	<div class="col s6 l6 m6">
+		      		<a href="/register"> Don't have one?
+		      	</div>
+		     	<div class="col s6 l6 m6">
+		      		<a href="/register"> Forgot password? </a>
+		      	</div>
+		      </div>
+		      <div class="row">
+		      	<div class="col s12"> 
+					<a class="btn login-button z-depth-0" onclick="postForm()" type="submit">Login</a>
+		      	</div>
+		      </div>
+		  </form>
+	    </div>
+  	</div>
 
 
 
@@ -89,7 +152,7 @@
 	  <script type="text/javascript">	  	
 		$( document ).ready(function(){
   			$(".button-collapse").sideNav();
-
+  			$('.modal-trigger').leanModal();
 			$('.dropdown-button').dropdown({
 			      inDuration: 300,
 			      outDuration: 225,
@@ -101,5 +164,6 @@
 			});
 			$('.scrollspy').scrollSpy();
 		})
+
 	  </script>
   </div>

@@ -35,7 +35,7 @@ app.use(passport.session());
 passport.use(new LocalStrategy(
   function (username, password, done) {
     process.nextTick( function afterTick() {
-      DB.findOne({'username':student_id}, function whenFound (err, user) {
+      DB.findOne({'student_id':username}, function whenFound (err, user) {
         if (err) { 
           return done(err); 
         }

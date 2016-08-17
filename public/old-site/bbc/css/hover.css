@@ -1,0 +1,63 @@
+/* CIRCLE ICON HOVER */
+.hi-icon {
+    display: table;
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    margin: 0px auto 25px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: rgb(73, 186, 242);
+}
+
+.hi-icon i {
+    font-size: 3em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.hi-icon-effect-6 .hi-icon {
+    box-shadow: 0 0 0 2px rgb(73, 186, 242);
+    -webkit-transition: background 0.2s, color 0.2s;
+    -moz-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+}
+
+.no-touch .hi-icon-effect-6 .hi-icon:hover {
+    background: rgb(73, 186, 242);
+    color: #FFF;
+}
+
+.no-touch .hi-icon-effect-6 .hi-icon:hover {
+    -webkit-animation: spinAround 2s linear infinite;
+    -moz-animation: spinAround 2s linear infinite;
+    animation: spinAround 2s linear infinite;
+}
+
+@keyframes spinAround {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spinAround {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes spinAround {
+    from {
+        -moz-transform: rotate(0deg)
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}

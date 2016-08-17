@@ -15,7 +15,7 @@
 		    IDs.push(id);
 		}
 		console.log(IDs);
-	}) 
+	});
 	
 	var support = { animations : Modernizr.cssanimations },
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
@@ -255,6 +255,11 @@
 					    		{
 					    			count+=4; //skips the other radio buttons that were saved as IDs
 					    		}
+
+					    	}
+					    	else
+					    	{
+					    		count+= 1;
 					    	}
 					    	console.log(IDs[count]);				
 							ev.preventDefault();
@@ -295,7 +300,7 @@
 						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 window.location.href = "/";
+							 //location = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -308,7 +313,11 @@
 				dot.addEventListener( 'click', function() {
 					self._showField( pos );
 					//POS SET HERE
+					console.log(count);
+					console.log(pos);
 					count = pos;
+					console.log(count);
+
 				} );
 			} );
 		}
@@ -471,7 +480,7 @@
 						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 window.location.href = "/";
+							 //location = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}

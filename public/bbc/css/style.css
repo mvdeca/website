@@ -1,0 +1,341 @@
+.navbar {
+    position: absolute;
+    margin: 0 auto;
+    font-weight: 600;
+    margin-top: 0px;
+    z-index: 400;
+    padding: 10px 0px 10px 0px;
+
+    background: rgba(255, 255, 255, 1);
+
+    -webkit-box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.25);
+    -moz-box-shadow:    0px 2px 2px rgba(50, 50, 50, 0.25);
+    box-shadow:         0px 2px 2px rgba(50, 50, 50, 0.25);
+}
+
+.navbar .row a.toggle {
+    background: none;
+    font-size: 2.4em;
+}
+
+.navbar ul li > a {
+    font-size: 20px;
+    text-shadow: none;
+    color: #222;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar ul li:hover > a {
+    background: none !important;
+    color: #26DBFF;
+}
+
+.popout {
+    position: absolute;
+    z-index: 100;
+    bottom:-184px;
+    height: 242px;
+}
+
+#top {
+    background: url("../img/top.jpg") no-repeat fixed center 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    display: table;
+    position: relative;
+
+    font-weight: 400;
+    color: #FFF;
+
+    width: 100%;
+    height: 90%;
+    min-height: 700px;
+
+    box-shadow: inset 0px -1px 2px 0px rgba(0, 0, 0, 0.22);
+
+    -webkit-box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,0.8);
+    box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,0.8);
+}
+
+#top * {
+	color: #FFF;
+}
+
+
+.message {
+    display: table-cell;
+    position: relative;
+    z-index: 100;
+    vertical-align: middle;
+    padding-bottom: 50px;
+}
+
+.message h1 {
+    font-size: 3.8em;
+    font-weight: 600;
+    line-height: 1.2em;
+
+    background: rgba(9, 51, 107, 0.74);
+}
+
+.message h4 {
+    line-height: 2em;
+}
+
+.content {
+    padding: 40px 0;
+    position: relative;
+}
+
+.content h2 {
+    font-size: 2.0em;
+    font-weight: 500;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.content h3 {
+    font-size: 1.6em;
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.content h4 {
+    font-size: 1.4em;
+}
+
+#about h4 {
+    font-size: 18px;
+    padding-bottom: 18px;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 14px;
+    line-height: 1.8em;
+}
+
+
+.button_transparent {
+    margin: 0px 16px;
+    padding: 4px 18px;
+
+    background-color: #38994F;
+
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.button_transparent:hover {
+    background-color: #52B36a;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.downward {
+    display: block;
+    position: absolute;
+    z-index: 400;
+
+    left: 0px;
+    right: 0px;
+    bottom: 70px;
+
+    font-size: 50px;
+    text-align: center;
+    font-weight: 700;
+}
+
+
+#about {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+#hello {
+    box-shadow: none;
+    background-color: rgb(73, 186, 242);
+}
+
+#hello * {
+    color: #FFF;
+}
+
+#features {
+    box-shadow: none;
+    padding: 0px;
+}
+
+.ipad_wrapper {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 62px 100px 0px;
+
+    background: url("http://bbc.mvdeca.org/img/ipad.png") no-repeat scroll center 0px transparent;
+    background-size: cover;
+}
+
+.screenie {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+
+.screenie img {
+    width: 100%;
+}
+
+.indent {
+    margin-top: 24px;
+}
+
+
+#middle {
+    background: url("../img/fongs.jpg") no-repeat fixed center 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    display: table;
+    position: relative;
+
+    font-weight: 400;
+    color: #FFF;
+
+    width: 100%;
+    height: 50%;
+    min-height: 400px;
+
+    box-shadow: inset 0px -1px 2px 0px rgba(0, 0, 0, 0.22);
+
+    -webkit-box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,0.6);
+    box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,0.6);
+}
+
+#middle * {
+    color: #FFF;
+}
+
+#middle .message {
+    padding-bottom: 50px;
+}
+
+#middle .message h1 {
+    background: rgba(9, 51, 107, 0.7);
+}
+
+#clients {
+    background-color: rgb(91, 99, 207);
+}
+
+#clients * {
+    color: #FFF;
+}
+
+
+#bottom {
+    background: url("../img/bonds.jpg") no-repeat fixed center 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    display: table;
+    position: relative;
+
+    font-weight: 400;
+    color: #FFF;
+
+    width: 100%;
+    height: 40%;
+    min-height: 450px;
+
+    box-shadow: inset 0px -1px 2px 0px rgba(0, 0, 0, 0.22);
+
+    -webkit-box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,1);
+    box-shadow: inset 0px 149px 283px -85px rgba(0,0,0,1);
+}
+
+#bottom * {
+    color: #FFF;
+}
+
+#bottom .message {
+    padding-bottom: 50px;
+}
+
+#bottom .message h1 {
+    background: rgba(9, 51, 107, 0.7);
+}
+
+#bottom h3 {
+    color: #FFF;
+}
+
+
+#rise {
+    background-color: rgb(91, 99, 207);
+    box-shadow: none;
+}
+
+#rise h3 {
+    font-weight: 500;
+    color: #FFF;
+}
+
+#rise .btn.medium {
+    font-size: 1rem;
+    height: 42px;
+    line-height: 40px;
+}
+
+
+.lefftyy {
+    padding-right: 20px;
+}
+
+footer {
+    
+}
+
+footer * {
+    color: rgb(204, 204, 204);
+    font-weight: 500;
+}
+
+footer .content p {
+    font-size: 0.8em;
+}
+
+.footer-top {
+    background-color: #333;
+}
+
+.footer-top * {
+    color:  rgb(164, 164, 164);
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 20px;
+}
+
+@media (max-width: 1000px) {
+    .content h2 {
+        font-size: 1.8em;
+    }
+}

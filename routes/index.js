@@ -52,6 +52,10 @@ router.get('/', function atHome (req, res, next) {
   }
 });
 
+router.get('/bbc', function atHome (req, res, next) {
+    res.sendFile(__dirname +'bbc/index.html');
+});
+
 router.get('/community', function onCommunity (req, res, next) {
     if (req.user) {
     res.render('community', {"loggedIn": true, "username" : req.user.username});

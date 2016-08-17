@@ -5,12 +5,14 @@
   <!--<link rel="stylesheet" type="text/css" href="/css/styles.css"> -->
   <script src="
 http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <!--<link rel="shortcut icon" href="../favicon.ico"> -->
   <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="/css/demo.css" />
   <link rel="stylesheet" type="text/css" href="/css/component.css" />
   <link rel="stylesheet" type="text/css" href="/css/cs-select.css" />
   <link rel="stylesheet" type="text/css" href="/css/cs-skin-boxes.css" />
+
   <script src="/js/modernizr.custom.js"></script>
   <script src="/js/classie.js"></script>
   <script src="/js/selectFx.js"></script>
@@ -99,8 +101,7 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
     var pphone = document.forms["myForm"]["hp"].value;
     var pupdate = document.forms["myForm"]["udate"].value;
     var address = document.forms["myForm"]["addr"].value;
-    var zip = parseInt(document.forms["myForm"]["zcode"].value);
-   
+    var zip = parseInt(document.forms["myForm"]["zcode"].value);   
     //console.log("goes to end");
     return true;
   }
@@ -185,7 +186,7 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">cellphone number</label>
-          <input class="fs-anim-lower" type="text" pattern="\d*" name="cnum" id="cnm" required/>
+          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="10" name="cnum" id="cnm" required/>
           <br/>
         </li>
         <li>
@@ -239,9 +240,29 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
           <br/>
         </li>
         <li>
-          <label class="fs-field-label fs-anim-upper">Relationship to student</label>
-          <input class="fs-anim-lower" type="text" name="r" id="therel" required/>
-          <br/>
+          <label class="fs-field-label fs-anim-upper">Relation to student:</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+          <label for="ytext" class="radio-conversion">
+            <input type="radio" id="mrel" name="r" value="mother" required> Mother
+          </label>
+          </span>
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="frel" name="r" value="father" required> Father
+          </label>
+          </span> 
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="frel" name="r" value="guardian" required> Guardian
+          </label>
+          </span> 
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="frel" name="r" value="other" required> Other
+          </label>
+          </span> 
+          </div>  
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Parent's email</label>
@@ -250,7 +271,7 @@ http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></
         </li>
         <li>
           <label class="fs-field-label fs-anim-upper">Parent's phone</label>
-          <input class="fs-anim-lower" type="text" pattern="\d*" name="hp" id="parphone" required/>
+          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="10" name="hp" id="parphone" required/>
           <br/>
         </li>
         <li>

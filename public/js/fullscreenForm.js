@@ -128,9 +128,12 @@
 			this.ctrlNav = createElement( 'nav', { cName : 'fs-nav-dots', appendTo : this.ctrls } );
 			var dots = '';
 			for( var i = 0; i < this.fieldsCount; ++i ) {
-				dots += i === this.current ? '<button class="fs-dot-current"></button>' : '<button disabled></button>';
+				dots += i === this.current ? '<button class="fs-dot-current" style="height:12px;width:12px"></button>' : '<button disabled style="height:12px;width:12px"></button>';
 			}
 			this.ctrlNav.innerHTML = dots;
+			//DOTS STYLE
+			//this.ctrlNav.style.width = "10px";
+			//this.ctrlNav.style.height = "100%";
 			this._showCtrl( this.ctrlNav );
 			this.ctrlNavDots = [].slice.call( this.ctrlNav.children );
 		}
@@ -239,11 +242,18 @@
 					    	//console.log(document.getElementById(IDs[count]).getAttribute("type") == "radio")
 					    	if(document.getElementById(IDs[count]).getAttribute("type") == "radio")
 					    	{
-					    		count+=3; //skips the other radio buttons that were saved as IDs
-					    	}
-					    	else
-					    	{
-					    		count+=1; 
+					    		if((document.getElementById(IDs[count]).getAttribute("name") == "gender"))
+					    		{
+					    			count+=3; //skips the other radio buttons that were saved as IDs
+					    		}
+					    		else if((document.getElementById(IDs[count]).getAttribute("name") == "text") || (document.getElementById(IDs[count]).getAttribute("name") == "udate") || (document.getElementById(IDs[count]).getAttribute("name") == "stat"))
+					    		{
+					    			count+=2; //skips the other radio buttons that were saved as IDs
+					    		}
+					    		else if((document.getElementById(IDs[count]).getAttribute("name") == "shirt") || (document.getElementById(IDs[count]).getAttribute("name") == "r"))
+					    		{
+					    			count+=4; //skips the other radio buttons that were saved as IDs
+					    		}
 					    	}
 					    	console.log(IDs[count]);				
 							ev.preventDefault();
@@ -295,6 +305,8 @@
 			this.ctrlNavDots.forEach( function( dot, pos ) {
 				dot.addEventListener( 'click', function() {
 					self._showField( pos );
+					//POS SET HERE
+					count = pos;
 				} );
 			} );
 		}
@@ -408,7 +420,7 @@
 					    		{
 					    			count+=2; //skips the other radio buttons that were saved as IDs
 					    		}
-					    		else if((document.getElementById(IDs[count]).getAttribute("name") == "shirt"))
+					    		else if((document.getElementById(IDs[count]).getAttribute("name") == "shirt") || (document.getElementById(IDs[count]).getAttribute("name") == "r"))
 					    		{
 					    			count+=4; //skips the other radio buttons that were saved as IDs
 					    		}
@@ -540,7 +552,7 @@
 					// callback
 					//self.options.onReview();
 					
-				    //window.location.href = "index.html";
+				    //window.location.href = "/";
 				}
 				else {
 					classie.remove( nextField, 'fs-show' );
@@ -622,7 +634,7 @@
 	/**
 	 * updateNav function
 	 * updates the navigation dots
-	 */
+	 NAVIGATION CIRCLES*/ 
 	FForm.prototype._updateNav = function() {
 		if( this.options.ctrlNavDots ) {
 			classie.remove( this.ctrlNav.querySelector( 'button.fs-dot-current' ), 'fs-dot-current' );
@@ -655,7 +667,7 @@
 
 		if( !input ) return true;
 
-		switch( input.tagName.toLowerCase() ) {
+		/*switch( input.tagName.toLowerCase() ) {
 			case 'input' : 
 				if( input.type === 'radio' || input.type === 'checkbox' ) {
 					var checked = 0;
@@ -690,7 +702,7 @@
 		if( error != undefined ) {
 			this._showError( error );
 			return false;
-		}
+		}*/
 
 		return true;
 	}

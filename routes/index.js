@@ -31,7 +31,7 @@ router.post('/register', function whenRegister(req, res, next) {
   console.log("CREATED A NEW USER RIGHT NOW WHOOASDFJAKSDHFKASDF");
   next();
 }, function afterRegistration(req, res) {
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 //logout session kill route

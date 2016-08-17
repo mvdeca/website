@@ -30,8 +30,6 @@ router.post('/register', function whenRegister(req, res, next) {
   DB.createUser(req.body.uname, req.body.pass, req.body.fname, req.body.lname, req.body.sid, req.body.em, req.body.mf, req.body.bday, req.body.gday, req.body.stat, req.body.cnum, req.body.text, req.body.shirt, req.body.pfn, req.body.pln, req.body.r, req.body.pm, req.body.pp, req.body.udate, req.body.addr, req.body.zcode);
   console.log("user registering with"+req.body);
   next();
-}, function afterRegistration(req, res) {
-  res.redirect('/');
 });
 
 //logout session kill route

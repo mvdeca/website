@@ -113,19 +113,19 @@ h1 {
    text-decoration: underline; 
 }
 #competitions {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/competitions.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/competitions.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
 
 #community {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/community.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/community.jpg') ;
     background-size: cover;
     background-attachment: fixed;
 }
 
 #culture {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/culture.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/images/culture.jpg');
     background-size: cover;
     background-attachment: fixed;
 }

@@ -121,6 +121,7 @@
 
 		// continue button (jump to next field)
 		this.ctrlContinue = createElement( 'button', { cName : 'fs-continue', inner : 'Continue', appendTo : this.ctrls } );
+		this.ctrlContinue.style.right = "65px";
 		this._showCtrl( this.ctrlContinue );
 
 		// navigation dots
@@ -289,11 +290,12 @@
 						      req.body.text, req.body.shirt, req.body.pfn, req.body.pln,
 						       req.body.r, req.body.pm, req.body.pp, req.body.udate, 
 						       req.body.addr, req.body.zcode*/
-						    //console.log("goes to end");
+						    console.log("goes to end");
 
 						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
+							 window.location.href = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -463,12 +465,13 @@
 						      req.body.text, req.body.shirt, req.body.pfn, req.body.pln,
 						       req.body.r, req.body.pm, req.body.pp, req.body.udate, 
 						       req.body.addr, req.body.zcode*/
-						    //console.log("goes to end");
-						    console.log(usrname);
+						    console.log("goes to end");
+						    //console.log(usrname);
 						    //console.log(req.body.uname);
 						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
+							 window.location.href = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}

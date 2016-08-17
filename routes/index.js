@@ -13,23 +13,6 @@ function isAuth (req, res, next) {  //middleware to check if the user is logged 
 	}
 }
 
-
-
-//login web page route
-router.get('/login', function atLogin (req, res, next) {
-    if (req.user) {
-      res.redirect('/');
-    }
-  	res.render('login');
-});
-
-//login verification route
-/*router.post('/login',
-  passport.authenticate('local', { 
-    successRedirect: '/',
-    failureRedirect: '/login'
-}));*/
-
 router.post('/login',
   passport.authenticate('local'),
   function(req, res) {
@@ -115,6 +98,60 @@ router.get('/profile', function onCommunity (req, res, next) {
   }
 });
 
+function sendEmail (emailID) {
+  var options = {
+    auth: {
+      api_user: 'mvdeca',
+      api_key: 'num1world'
+    }
+  }
 
+  var client = nodemailer.createTransport(sgTransport(options));
+    var email = {
+      from: 'infotech@mvdeca.org',
+      to: 'sahasd@gmail.com',
+      subject: 'Change Password',
+      text: 'Hello world',
+      html: '<b>Hello world</b>'
+    };
+
+    client.sendMail(email, function(err, info){
+        if (err ){
+          console.log(error);
+        }
+        else {
+          console.log('Message sent: ' + info.response);
+        }
+    });
+}
+
+function sendmail (emailID) {
+  var options = {
+    auth: {
+      api_user: 'mvdeca',
+      api_key: 'num1world'
+    }
+  }
+
+  var client = nodemailer.createTransport(sgTransport(options));
+    var email = {
+      from: 'infotech@mvdeca.org',
+      to: 'sahasd@gmail.com',
+      subject: 'Change Password',
+      text: 'hello',
+      html: '<b>hello</b>'
+    };
+
+    client.sendMail(email, function(err, info){
+        if (err ){
+          console.log(error);
+        }
+        else {
+          console.log('Message sent: ' + info.response);
+        }
+    });
+}
+
+  
 
 module.exports = router;

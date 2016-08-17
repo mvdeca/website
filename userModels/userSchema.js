@@ -40,7 +40,9 @@ var UserSchema = new Schema ({
     address: {type: String},
     zipcode: {type: String},
     hours: {type: Number},
-    testing: {}
+    testing: {},
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
 });
 
 UserSchema.pre('save', function beforeSave (next) {

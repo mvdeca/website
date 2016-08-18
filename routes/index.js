@@ -9,7 +9,7 @@ function isAuth (req, res, next) {  //middleware to check if the user is logged 
 		next();
   }
   else {
-    res.redirect('/login');
+    res.redirect('/');
 	}
 }
 
@@ -27,9 +27,9 @@ router.get('/register', function onRegister (req, res, next) {
 
 //send new credentials to server
 router.post('/register', function whenRegister(req, res, next) {
-  DB.createUser(req.body.uname, req.body.pass, req.body.fname, req.body.lname, req.body.sid, req.body.em, req.body.mf, req.body.bday, req.body.gday, req.body.stat, req.body.cnum, req.body.text, req.body.shirt, req.body.pfn, req.body.pln, req.body.r, req.body.pm, req.body.pp, req.body.udate, req.body.addr, req.body.zcode);
+  DB.createUser(req.body.pass, req.body.fname, req.body.lname, req.body.sid, req.body.em, req.body.mf, req.body.bday, req.body.gday, req.body.stat, req.body.cnum, req.body.text, req.body.shirt, req.body.pfn, req.body.pln, req.body.r, req.body.pm, req.body.pp, req.body.udate, req.body.addr, req.body.zcode);
   console.log("user registering with"+req.body);
-  next();
+  res.redirect('/')
 });
 
 //logout session kill route
@@ -43,7 +43,7 @@ router.get('/logout', function atLogout (req, res) {
 //GET home page. 
 router.get('/', function atHome (req, res, next) {
   if (req.user) {
-    res.render('index', {"loggedIn": true, "username" : req.user.username});
+    res.render('index', {"loggedIn": true, "username" : req.user.firstname});
   }
   else {
     res.render('index', {"loggedIn": false, "username" : "null"});
@@ -56,7 +56,7 @@ router.get('/bbc', function atHome (req, res, next) {
 
 router.get('/community', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('community', {"loggedIn": true, "username" : req.user.username});
+    res.render('community', {"loggedIn": true, "username" : req.user.firstname});
   }
   else {
     res.render('community', {"loggedIn": false, "username" : "null"});
@@ -65,7 +65,7 @@ router.get('/community', function onCommunity (req, res, next) {
 
 router.get('/competitions', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('competitions', {"loggedIn": true, "username" : req.user.username});
+    res.render('competitions', {"loggedIn": true, "username" : req.user.firstname});
   }
   else {
     res.render('competitions', {"loggedIn": false, "username" : "null"});
@@ -74,7 +74,7 @@ router.get('/competitions', function onCommunity (req, res, next) {
 
 router.get('/events', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('events', {"loggedIn": true, "username" : req.user.username});
+    res.render('events', {"loggedIn": true, "username" : req.user.firstname});
   }
   else {
     res.render('events', {"loggedIn": false, "username" : "null"});
@@ -83,7 +83,7 @@ router.get('/events', function onCommunity (req, res, next) {
 
 router.get('/about', function onCommunity (req, res, next) {
     if (req.user) {
-    res.render('about', {"loggedIn": true, "username" : req.user.username});
+    res.render('about', {"loggedIn": true, "username" : req.user.firstname});
   }
   else {
     res.render('about', {"loggedIn": false, "username" : "null"});
@@ -93,7 +93,7 @@ router.get('/about', function onCommunity (req, res, next) {
 router.get('/profile', function onCommunity (req, res, next) {
   console.log(req.user.username)
   if (req.user) {
-    res.render('profile', {"loggedIn": true, "username" : req.user.username, "user": req.user});
+    res.render('profile', {"loggedIn": true, "username" : req.user.firstname, "user": req.user});
   }
   else {
     res.render('profile', {"loggedIn": false, "username" : "null"});

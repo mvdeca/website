@@ -58,7 +58,7 @@ html, body {
     width: 100%;
     z-index: 1;
     overflow: auto;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/competitions.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/team.jpg');
     background-size: cover;
 
 }
@@ -410,7 +410,7 @@ li{
 }
 
 #event-lace {
-    background-image: url('/images/events/lace.jpg');
+    background-image: url('/images/events/lace-event.jpg');
 }
 #event-svcdc {
     background-image: url('/images/events/svcdc.jpg');

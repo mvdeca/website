@@ -1,17 +1,16 @@
 var mongoose = require('mongoose');
 var userSchema = require('./userSchema.js');
 var passport = require('passport');
-exports.createUser = function (uname, pass, fname, lname, sid, em, mf, bday, gday, stat, cnum, text, shirt, pfn, pln, r, pm, pp, udate, addr, zcode) {
-	return userSchema.count({username: uname}, function whenCounted(err, count) {
+exports.createUser = function (pass, fname, lname, sid, em, mf, bday, gday, stat, cnum, text, shirt, pfn, pln, r, pm, pp, udate, addr, zcode) {
+	return userSchema.count({email: em}, function whenCounted(err, count) {
 		if (err) {
 			throw err;
 		}
 		if (count > 0) {
-			console.log("Can't create another user with same name");
+			console.log("Can't create another user with same email");
 			return false;
 		}
 		var user = new userSchema({
-		    username: uname,
 		    password: pass,
 		    firstname: fname,
 		    lastname: lname,
@@ -39,7 +38,7 @@ exports.createUser = function (uname, pass, fname, lname, sid, em, mf, bday, gda
 				console.log(err);
 				throw err;
 			}
-			console.log('user: '+ uname +' created!');
+			console.log('user: '+ fname +' created!');
 		});
 		return true;
 	});

@@ -15,7 +15,7 @@
 		    IDs.push(id);
 		}
 		console.log(IDs);
-	}) 
+	});
 	
 	var support = { animations : Modernizr.cssanimations },
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
@@ -255,6 +255,11 @@
 					    		{
 					    			count+=4; //skips the other radio buttons that were saved as IDs
 					    		}
+
+					    	}
+					    	else
+					    	{
+					    		count+= 1;
 					    	}
 					    	console.log(IDs[count]);				
 							ev.preventDefault();
@@ -295,7 +300,7 @@
 						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 window.location.href = "/";
+							 //location = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -307,8 +312,45 @@
 			this.ctrlNavDots.forEach( function( dot, pos ) {
 				dot.addEventListener( 'click', function() {
 					self._showField( pos );
+					console.log("COUNT BEFORE: "+count);
 					//POS SET HERE
-					count = pos;
+					count = 0;
+					for(var i = 0; i < pos; i++)
+					{
+						if(document.getElementById(IDs[i]).getAttribute("name") == "bday")
+						{
+							console.log("in bday");
+							count+= 1;
+						}
+						else if(document.getElementById(IDs[i]).getAttribute("type") == "radio")
+					    	{
+					    		//console.log("in radio");
+					    		if((document.getElementById(IDs[i]).getAttribute("name") == "gender"))
+					    		{
+					    			//console.log("in gender");
+					    			count+=3; //skips the other radio buttons that were saved as IDs
+					    		}
+					    		else if((document.getElementById(IDs[i]).getAttribute("name") == "text") || (document.getElementById(IDs[count]).getAttribute("name") == "udate") || (document.getElementById(IDs[count]).getAttribute("name") == "stat"))
+					    		{
+					    			count+=2; //skips the other radio buttons that were saved as IDs
+					    		}
+					    		else if((document.getElementById(IDs[i]).getAttribute("name") == "shirt") || (document.getElementById(IDs[count]).getAttribute("name") == "r"))
+					    		{
+					    			count+=4; //skips the other radio buttons that were saved as IDs
+					    		}
+
+					    	}
+					    	else
+					    	{
+					    		count+= 1;
+					    	}
+					}
+					//count = pos;
+					console.log("POS: " + pos);
+					console.log("COUNT: "+ count);
+					//$(document.getElementById(IDs[count])).focus();
+
+
 				} );
 			} );
 		}
@@ -471,7 +513,7 @@
 						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 window.location.href = "/";
+							 //location = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}

@@ -308,12 +308,14 @@
 							            window.location.href = "/";
 							        }
 							    });*/
+							//ev.PreventDefault();
 							 $.post("/register",
 						    data,
 						    function(data, status){
-						        window.location = "/";
+						         window.location.replace("/");
 						    });
-							 window.location = "/";
+							 //ev.PreventDefault();
+							  window.location.replace("/");
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -537,11 +539,14 @@
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							//window.location = "/";
 							 //$.post("/register", data, function(response) { alert(response);}, 'json');
+							  //ev.PreventDefault();
 							  $.post("/register",
 						    data,
 						    function(data, status){
-						        window.location = "/";
 						    });
+							  //ev.PreventDefault();
+							  window.close();
+							  window.open("/");
 							 console.log("GOT THROUGH post");
 						}
 					}

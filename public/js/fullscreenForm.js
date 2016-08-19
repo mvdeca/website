@@ -312,10 +312,14 @@
 							 $.post("/register",
 						    data,
 						    function(data, status){
-						         window.location.replace("/");
+						        
 						    });
 							 //ev.PreventDefault();
-							  window.location.replace("/");
+							  setTimeout(function(){
+							  console.log("In callback"); 
+							  	window.close();
+							  	window.open("/");
+							   }, 10000);
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -543,10 +547,16 @@
 							  $.post("/register",
 						    data,
 						    function(data, status){
+						    	
 						    });
 							  //ev.PreventDefault();
+							  setTimeout(function(){ 
+							  	console.log("in call bac");
+							  	
+							   }, 20000000);
 							  window.close();
-							  window.open("/");
+							  	window.open("/");
+
 							 console.log("GOT THROUGH post");
 						}
 					}

@@ -1,5 +1,4 @@
-
-;( function( window ) {
+( function( window ) {
 	
 	'use strict';
 	var count;
@@ -269,7 +268,7 @@
 						else
 						{
 							var first = document.forms["myForm"]["fname"].value;
-						    var usrname = document.forms["myForm"]["uname"].value;
+						    //var usrname = document.forms["myForm"]["uname"].value;
 						    var password = document.forms["myForm"]["pass"].value;
 						    var last = document.forms["myForm"]["lname"].value;
 						    var studentId = document.forms["myForm"]["sid"].value;
@@ -295,12 +294,12 @@
 						      req.body.text, req.body.shirt, req.body.pfn, req.body.pln,
 						       req.body.r, req.body.pm, req.body.pp, req.body.udate, 
 						       req.body.addr, req.body.zcode*/
-						    console.log("goes to end");
+						    //console.log("goes to end");
 
-						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
-						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
+						    var data = {"fname": first, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
+							"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 location = "/";
+							 window.location.href = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -320,7 +319,7 @@
 					var inc = pos;
 					while(i < inc)
 					{
-						console.log("INC:" +inc);
+						//console.log("INC:" +inc);
 						/*if(IDs[i] == "bday")
 						{
 							console.log("in bday");
@@ -333,19 +332,19 @@
 					    		{
 					    			//console.log("in gender");
 					    			count+=3; //skips the other radio buttons that were saved as IDs
-					    			inc+=3;
+					    			inc+=2;
 					    			i+=2;
 					    		}
 					    		else if((document.getElementById(IDs[i]).getAttribute("name") == "text") || (document.getElementById(IDs[count]).getAttribute("name") == "udate") || (document.getElementById(IDs[count]).getAttribute("name") == "stat"))
 					    		{
 					    			count+=2; //skips the other radio buttons that were saved as IDs
-					    			inc+=2;
+					    			inc+=1;
 					    			i+=1;
 					    		}
 					    		else if((document.getElementById(IDs[i]).getAttribute("name") == "shirt") || (document.getElementById(IDs[count]).getAttribute("name") == "r"))
 					    		{
 					    			count+=4; //skips the other radio buttons that were saved as IDs
-					    			inc+=4;
+					    			inc+=3;
 					    			i+=3;
 					    		}
 					    	}
@@ -356,8 +355,8 @@
 					    	i += 1;
 					}
 					//count = pos;
-					console.log("POS: " + pos);
-					console.log("COUNT: "+ count);
+					//console.log("POS: " + pos);
+					//console.log("COUNT: "+ count);
 					//$(document.getElementById(IDs[count])).focus();
 
 
@@ -491,7 +490,7 @@
 						else
 						{
 							var first = document.forms["myForm"]["fname"].value;
-						    var usrname = document.forms["myForm"]["uname"].value;
+						    //var usrname = document.forms["myForm"]["uname"].value;
 						    var password = document.forms["myForm"]["pass"].value;
 						    var last = document.forms["myForm"]["lname"].value;
 						    var studentId = document.forms["myForm"]["sid"].value;
@@ -520,10 +519,10 @@
 						    console.log("goes to end");
 						    //console.log(usrname);
 						    //console.log(req.body.uname);
-						    var data = {"fname": first, "uname": usrname, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
+						    var data = {"fname": first, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 location = "/";
+							 window.location.href = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -739,21 +738,18 @@
 					error = 'NOVAL';
 				}
 				break;
-
 			case 'select' : 
 				// assuming here '' or '-1' only
 				if( input.value === '' || input.value === '-1' ) {
 					error = 'NOVAL';
 				}
 				break;
-
 			case 'textarea' :
 				if( input.value === '' ) {
 					error = 'NOVAL';
 				}
 				break;
 		}
-
 		if( error != undefined ) {
 			this._showError( error );
 			return false;

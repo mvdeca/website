@@ -44,7 +44,7 @@ var UserSchema = new Schema ({
     resetPasswordExpires: Date
 });
 
-UserSchema.pre('save', function beforeSave (next) {
+/*UserSchema.pre('save', function beforeSave (next) {
 	//setting the user to this object
 	var user = this; 
 	//only if the password has been modified/new
@@ -71,7 +71,7 @@ function isSamePassword (candidatePassword, cb) {
         if (err) return cb(err);
         cb(null, isMatch); // if match -> true, else -> false
     });
-};
+};*/
 
 var user = mongoose.model('users', UserSchema); 
 module.exports = user;

@@ -42,7 +42,13 @@ passport.use(new LocalStrategy(
         if (!user) { 
           return done(null, false); 
         }
-        user.comparePassword(password, function(err, isMatch) {
+        if (user.password == password) {
+          return done(null,user);
+        }
+        else {
+          return done(null,false);
+        }
+        /*user.comparePassword(password, function(err, isMatch) {
           if (err) throw err;
           if (isMatch) {
             return done(null, user); 
@@ -50,7 +56,7 @@ passport.use(new LocalStrategy(
           else {
             return done(null, false);
           }
-        });
+        });*/
       });
     });
   }

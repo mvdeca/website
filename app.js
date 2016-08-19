@@ -11,6 +11,7 @@ var nodemailer = require('nodemailer');
 var routes = require('./routes/index');
 var DB = require('./userModels/userSchema');
 var sgTransport = require('nodemailer-sendgrid-transport');
+var bcrypt = require('bcryptjs');
 
 
 
@@ -42,12 +43,17 @@ passport.use(new LocalStrategy(
         if (!user) { 
           return done(null, false); 
         }
-        if (user.password == password) {
-          return done(null,user);
+    bcrypt.compare(password, user.password, function(err, res) {
+        if (res == true) {
+          return done(null, user);
         }
         else {
           return done(null,false);
         }
+    });
+
+
+
         /*user.comparePassword(password, function(err, isMatch) {
           if (err) throw err;
           if (isMatch) {
@@ -68,6 +74,10 @@ passport.serializeUser( function whenSerialized(user, done) {
 passport.deserializeUser( function whenDeserialized(user, done) {
   done(null, user);
 });
+
+function isValidPassword(user, password){
+  return bcrypt.compareSync(password, user.password);
+}
 
 app.use('/', routes);
 //app.use('/users', users);

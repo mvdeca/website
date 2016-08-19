@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var SALT_WORK_FACTOR = 10;
 var Schema = mongoose.Schema; 
 
@@ -43,6 +43,8 @@ var UserSchema = new Schema ({
     resetPasswordToken: String,
     resetPasswordExpires: Date
 });
+
+
 
 /*UserSchema.pre('save', function beforeSave (next) {
 	//setting the user to this object

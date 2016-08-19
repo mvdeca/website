@@ -298,7 +298,21 @@
 
 						    var data = {"fname": first, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 							"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
-							 $.post("/register", data, function(response) { alert(response);}, 'json');
+							 //$.post("/register", data, function(response) { alert(response);}, 'json');
+							 //window.location = "/";
+							/* $.ajax({
+							        url:'/register',
+							        type:'post',
+							        data:data,
+							        success:function(){
+							            window.location.href = "/";
+							        }
+							    });*/
+							 $.post("/register",
+						    data,
+						    function(data, status){
+						        window.location = "/";
+						    });
 							 window.location = "/";
 							 console.log("GOT THROUGH post");
 						}
@@ -521,8 +535,9 @@
 						    //console.log(req.body.uname);
 						    var data = {"fname": first, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
+							window.location = "/";
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 window.location = "/";
+							 
 							 console.log("GOT THROUGH post");
 						}
 					}

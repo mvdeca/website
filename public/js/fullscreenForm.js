@@ -315,11 +315,12 @@
 						        
 						    });
 							 //ev.PreventDefault();
-							  setTimeout(function(){
-							  console.log("In callback"); 
-							  	window.close();
+							 setTimeout(function(){ 
+							  	console.log("in call bac");
+							  	
+							   }, 20000000);
+							  window.close();
 							  	window.open("/");
-							   }, 10000);
 							 console.log("GOT THROUGH post");
 						}
 					}

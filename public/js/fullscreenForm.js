@@ -299,7 +299,7 @@
 						    var data = {"fname": first, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 							"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 window.location.href = "/";
+							 window.location = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}
@@ -522,7 +522,7 @@
 						    var data = {"fname": first, "pass": password, "lname": last, "sid":studentId, "em":email, "mf":gender, "bday":theday, "gday":grad,
 						"stat":status, "cnum":cell, "text":texting, "shirt":tshirt, "pfn":pfirst, "pln":plast, "r":relation, "pm":pemail, "pp":pphone, "udate":pupdate, "addr":address, "zcode":zip};
 							 $.post("/register", data, function(response) { alert(response);}, 'json');
-							 window.location.href = "/";
+							 window.location = "/";
 							 console.log("GOT THROUGH post");
 						}
 					}

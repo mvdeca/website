@@ -378,12 +378,12 @@ h1 {
     }
 
     #community {
-        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/community.jpg');
+        background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0)), url('/images/community.jpg');
         background-size: cover;
     }
 
     #culture {
-        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.0)), url('/images/culture.jpg');
+        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url('/images/culture.jpg');
         background-size: cover;
     }
 }

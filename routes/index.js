@@ -4,7 +4,7 @@ var DB = require('../userModels/DB');
 var User = require('../userModels/userSchema');
 var exec = require('exec');
 var router = express.Router();
-
+var path = require('path');
 function isAuth (req, res, next) {  //middleware to check if the user is logged in, if not redirect to login
 	if (req.user) {
 		next();

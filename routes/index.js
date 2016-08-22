@@ -34,7 +34,7 @@ router.get('/userdata', function(req, res, next) {
       if(err) {
         res.send(err);
       }
-      res.sendFile(path.join(__dirname,'..', 'data.csv'));
+      res.send(path.join(__dirname,'..', 'data.csv'));
     });
   }
 });

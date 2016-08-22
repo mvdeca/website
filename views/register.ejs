@@ -1,82 +1,323 @@
-<% include partials/header %>
-<body>
-	<div class="container">
-		<div class="register-header">
-			<h1>Join Us</h1>
-			<p>All fields are required</p>		
-		</div>
-	  <form id="registration-form" action="signup" method="post">
-	  	<div class="form-wrapper">
-	      <div class="row">
-	        <div class="input-field col m6 s12">
-	          <label for="fname">First Name</label>
-	          <input type="text" id="fname" name="fname" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="lname">Last Name</label>
-	          <input type="text" id="lname" name="lname" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="email">Email Address</label>
-	          <input type="text" id="email" name="email" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <select id="gender">
-	            <option value="male">Male</option>
-	            <option value="female">Female</option>
-	            <option value="other">Other</option>
-	          </select>
-	          <label for="gender">Gender</label>
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="grade">Student ID</label>
-	          <input type="text" id="sid" name="sid" maxlength="7">
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <select id="grade">
-	            <option value="9">9</option>
-	            <option value="10">10</option>
-	            <option value="11">11</option>
-	            <option value="12">12</option>
-	          </select>
-	          <label for="grade">Grade</label>
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <label for="dob1">Date of Birth</label>
-	          <input type="text" id="dob1" name="dob1" placeholder="MM" maxlength="2" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="dob2" name="dob2" placeholder="DD" maxlength="2" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="dob3" name="dob3" placeholder="YYYY" maxlength="4" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <label for="phone1">Phone Number</label>
-	          <input type="text" id="phone1" name="phone1" class="phone" placeholder="XXX" maxlength="3" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="phone2" name="phone2" class="phone" placeholder="XXX" maxlength="3" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="phone3" name="phone3" class="phone" placeholder="XXXX" maxlength="4" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="password">Password</label>
-	          <input type="password" id="password" name="password" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="confirm-password">Confirm Password</label>
-	          <input type="password" id="confirm-password" name="confirm-password" />
-	        </div>
-	      </div>
-	      <div class="row">
-	        <button class="btn btn-large submit col m6 offset-m6 s12 waves-effect" type="submit" id="submit" name="submit" value="Submit">
-	          SUBMIT <i class="material-icons right">send</i>
-	        </button>
-	      </div>
-	    </div>
-	  </form>
-	</div>
-</body>
+<html>
+<head>
+  <!--<script src="react.js"></script>-->
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+  <!--<link rel="stylesheet" type="text/css" href="/css/styles.css"> -->
+  <script src="
+http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <!--<link rel="shortcut icon" href="../favicon.ico"> -->
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="/css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/cs-select.css" />
+  <link rel="stylesheet" type="text/css" href="/css/cs-skin-boxes.css" />
+
+  <script src="/js/modernizr.custom.js"></script>
+  <script src="/js/classie.js"></script>
+  <script src="/js/selectFx.js"></script>
+  <script src="/js/fullscreenForm.js"></script>
+
+  <script type="text/javascript">
+  
+  var isValid = true;
+ $(document).ready(function() {
+  
+    var f = document.getElementById("myform");
+    //f.addEventListener("blur", blurFunction, true);
+    //f.addEventListener("focus", focusFunction, true);
+  });
+  /*function focusFunction() {
+    $("#myform").validate();
+  }*/
+  /*function blurFunction() {
+    $('*').blur(function(){
+         
+    $("#myform").validate(
+      {
+        rules: 
+        {
+          sid: 
+          {
+            maxlength: 10,
+            digits: true,
+          },
+          cnum:
+          {
+            digits: true,
+            maxlength: 8,
+          },
+          hp:
+          {
+            digits: true,
+            maxlength: 8,
+          },
+          gday:
+          {
+            digits: true,
+          },
+          zcode:
+          {
+            digits: true,
+            maxlength: 5,
+          },
+          message: 
+          {
+            rangelength:[50,1050]
+          }
+        }
+      });
+   //console.log(!($(this).valid()));
+    if(!($(this).valid())){
+             $(this).focus();
+             return false;
+         }
+     });
+  }*/
+
+  function validateForm() {
+    //console.log("im here!");
+    var first = document.forms["myForm"]["fname"].value;
+    var uname = document.forms["myForm"]["uname"].value;
+    var password = document.forms["myForm"]["pass"].value;
+    var last = document.forms["myForm"]["lname"].value;
+    var studentId = parseInt(document.forms["myForm"]["sid"].value);
+    var email = document.forms["myForm"]["em"].value;
+    var gender = document.forms["myForm"]["gender"].value;
+    var bday = document.forms["myForm"]["bday"].value;
+    var grad = parseInt(document.forms["myForm"]["gday"].value);
+    var status = document.forms["myForm"]["stat"].value;
+    var cell = document.forms["myForm"]["cnum"].value;
+    var text = document.forms["myForm"]["text"].value;
+    var tshirt = document.forms["myForm"]["shirt"].value;
+    var bday = document.forms["myForm"]["bday"].value;
+    var pfirst = document.forms["myForm"]["pfn"].value;
+    var plast = document.forms["myForm"]["pln"].value;
+    var relation = document.forms["myForm"]["r"].value;
+    var pemail = document.forms["myForm"]["pm"].value;
+    var pphone = document.forms["myForm"]["hp"].value;
+    var pupdate = document.forms["myForm"]["udate"].value;
+    var address = document.forms["myForm"]["addr"].value;
+    var zip = parseInt(document.forms["myForm"]["zcode"].value);   
+    //console.log("goes to end");
+    return true;
+  }
+  </script>
+  <style type="text/css">
+ 
+  </style>
+</head>
+
+<body bgcolor="#3498db">
+  <div class="container">
+  <div class="fs-form-wrap" id="fs-form-wrap">
+    <div class="fs-title">
+      <h1>Welcome to Monta Vista DECA!</h1>
+    </div>
+    <form name="myForm" id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" action="/register">
+      <ol class="fs-fields">
+        <!--<li>
+          <label class="fs-field-label fs-anim-upper">Username</label>
+          <input class="fs-anim-lower" type="text" name="uname" id="usr" required/>
+          <br/>
+        </li>-->
+         <li>
+          <label class="fs-field-label fs-anim-upper">Email</label>
+          <input class="fs-anim-lower" type="email" name="em" id="email" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Password</label>
+          <input class="fs-anim-lower" type="password" name="pass" id="password" required/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">First name</label>
+          <input class="fs-anim-lower" type="text" name="fname" id="firstname" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Last name</label>
+          <input class="fs-anim-lower" type="text" name="lname" id="lastname" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Student id</label>
+          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="7" name="sid" id="studid" required/>
+          <br/>
+        </li>
+        <li data-input-trigger>
+          <label class="fs-field-label fs-anim-upper">Gender</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span><label for="mgender" class="radio-conversion"><input type="radio" id="mgender" name="gender" value="male" required />Male</label></span>
+            <span>
+            <label for="mgender" class="radio-conversion"><input type="radio" id="fgender" name="gender" value="female" required />Female</label></span>
+            <span>
+            <label for="mgender" class="radio-conversion"><input type="radio" id="ogender" name="gender" value="other" required />Other</label></span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Birthday</label>
+          <input class="fs-anim-lower" type="date" name="bday" id="birth" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Graduation year</label>
+          <input class="fs-anim-lower" type="text" name="gday" pattern="\d*" maxlength="4" id="grad" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Membership status</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+            <label for="rstat" class="radio-conversion">
+            <input type="radio" id="rstat" name="stat" value="returning" required> Returning
+            </label>
+          </span>
+          <span>
+            <label for="nstat" class="radio-conversion">
+            <input type="radio" id="nstat" name="stat" value="new" required> New
+            </label>
+          </span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Cellphone number</label>
+          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="10" name="cnum" id="cnm" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Can you text?</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+          <label for="ytext" class="radio-conversion">
+            <input type="radio" id="ytext" name="text" value="yes" required> Yes
+          </label>
+          </span>
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="ntext" name="text" value="no" required> No
+          </label>
+          </span> 
+          </div>     
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">T-shirt size</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+            <label for="sshirt" class="radio-conversion">
+            <input type="radio" id="sshirt" name="shirt" value="s" required> Small
+            </label>
+          </span>
+          <span>
+          <label for="mshirt" class="radio-conversion">
+            <input type="radio" id="mshirt" name="shirt" value="m" required> Medium
+          </label>
+          </span>
+          <span>
+          <label for="lshirt" class="radio-conversion">
+            <input type="radio" id="lshirt" name="shirt" value="l" required> Large
+          </label>
+          </span>
+          <span>
+            <label for="xlshirt" class="radio-conversion">
+            <input type="radio" id="xlshirt" name="shirt" value="xl" required> XL
+            </label>
+          </span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's first name</label>
+          <input class="fs-anim-lower" type="text" name="pfn" id="parfirst" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's last name</label>
+          <input class="fs-anim-lower" type="text" name="pln" id="parlast" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Relation to student</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+          <label for="ytext" class="radio-conversion">
+            <input type="radio" id="mrel" name="r" value="mother" required> Mother
+          </label>
+          </span>
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="frel" name="r" value="father" required> Father
+          </label>
+          </span> 
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="frel" name="r" value="guardian" required> Guardian
+          </label>
+          </span> 
+          <span>
+          <label for="ntext" class="radio-conversion">
+            <input type="radio" id="frel" name="r" value="other" required> Other
+          </label>
+          </span> 
+          </div>  
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's email</label>
+          <input class="fs-anim-lower" type="email" name="pm" id="parem" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Parent's phone</label>
+          <input class="fs-anim-lower" type="text" pattern="\d*" maxlength="10" name="hp" id="parphone" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Would your parent's like updates?</label>
+          <div class="fs-radio-group clearfix fs-anim-lower">
+          <span>
+            <label for="yupdate" class="radio-conversion">
+            <input type="radio" id="yupdate" name="udate" value="yes" required> Yes
+            </label>
+          </span>
+          <span>
+            <label for="nupdate" class="radio-conversion">
+            <input type="radio" id="nupdate" name="udate" value="no" required> No
+            </label>
+          </span>
+          </div>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Home address</label>
+          <input class="fs-anim-lower" type="text" name="addr" id="home" required/>
+          <br/>
+        </li>
+        <li>
+          <label class="fs-field-label fs-anim-upper">Zip code </label>
+          <input class="fs-anim-lower" type="text" pattern="[0-9]*" maxlength="5" id="zippy" name="zcode" required/>
+          <br/>
+        </li>
+      </ol>  
+      <button type="submit"><font color="white">Submit</font></button>
+    </form>
+  </div>
+  </div>
+  <script type="text/javascript">
+    (function() {
+        var formWrap = document.getElementById( 'fs-form-wrap' );
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+          new SelectFx( el, {
+            stickyPlaceholder: false,
+            onChange: function(val){
+              document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+            }
+          });
+        } );
+        new FForm( formWrap, {
+          onReview : function() {
+            classie.add( document.body, 'overview' ); // for demo purposes only
+          }
+        } );
+      })();
+  </script>
+
+  </body>
 </html>

@@ -29,7 +29,7 @@ router.get('/register', function onRegister (req, res, next) {
 router.get('/userdata', function(req, res, next) {
   if (req.user.email == "sameert234@gmail.com") { 
     if(process.env.OPENSHIFT_MONGODB_DB_HOST)
-      command = 'mongoexport --host $OPENSHIFT_MONGODB_DB_HOST --username $OPENSHIFT_MONGODB_DB_USERNAME --password $OPENSHIFT_MONGODB_DB_PASSWORD --db site --collection users --data=csv  --fields firstname,lastname,pfname,plname,pmail,email --out data.csv';
+      command = 'mongoexport --host $OPENSHIFT_MONGODB_DB_HOST --username $OPENSHIFT_MONGODB_DB_USERNAME --password $OPENSHIFT_MONGODB_DB_PASSWORD --db site --collection users --csv  --fields firstname,lastname,pfname,plname,pmail,email --out data.csv';
     exec(command, function(err, stdout, stderr) {
       if(err) {
         res.send(err);

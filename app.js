@@ -41,7 +41,7 @@ function sendmail (emailID) {
     });
 }
 
-sendmail("sahasd@gmail.com")
+//sendmail("sahasd@gmail.com")
 
 var app = express();
 

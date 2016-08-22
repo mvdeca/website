@@ -31,9 +31,9 @@ router.get('/userdata', function(req, res, next) {
     if(process.env.OPENSHIFT_MONGODB_DB_HOST)
       command = 'mongoexport --host $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT --username $OPENSHIFT_MONGODB_DB_USERNAME --password $OPENSHIFT_MONGODB_DB_PASSWORD --db site --collection users --csv  --fields firstname,lastname,pfname,plname,pmail,email --out data.csv';
     exec(command, function(err, stdout, stderr) {
-      if(err) {
-        res.send('data.csv');
-      }
+      res.setHeader('Content-disposition', 'attachment; filename=data.csv');
+      res.set('Content-Type', 'text/csv');
+      res.status(200).send(csv);
       res.send('data.csv');
     });
   }

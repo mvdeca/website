@@ -14,6 +14,34 @@ var sgTransport = require('nodemailer-sendgrid-transport');
 var bcrypt = require('bcryptjs');
 
 
+function sendmail (emailID) {
+  var options = {
+    auth: {
+      api_user: 'mvdeca',
+      api_key: 'num1world'
+    }
+  }
+
+  var client = nodemailer.createTransport(sgTransport(options));
+    var email = {
+      from: 'infotech@mvdeca.org',
+      to: emailID,
+      subject: 'MVDECA Confirmation',
+      text: 'Congrats you are now a member of MVDECA. If you are having any issues logging in, contact an officer',
+      html: '<b>Congrats you are now a member of MVDECA. If you are having any issues logging in, contact an officer.</b>'
+    };
+
+    client.sendMail(email, function(err, info){
+        if (err ){
+          console.log(error);
+        }
+        else {
+          console.log('Message sent: ' + info.response);
+        }
+    });
+}
+
+sendmail("sahasd@gmail.com")
 
 var app = express();
 

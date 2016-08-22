@@ -26,17 +26,18 @@ router.get('/register', function onRegister (req, res, next) {
   res.render('register');
 });
 
-/*router.get('/userdata', function(req, res, next) {
-  var command = 'mongoexport --host localhost --db mvjsa --collection users --csv  --fields fname,lname,email,phone,sid,gender --out data.csv';
-  if(process.env.OPENSHIFT_MONGODB_DB_HOST)
-    command = 'mongoexport --host $OPENSHIFT_MONGODB_DB_HOST --username $OPENSHIFT_MONGODB_DB_USERNAME --password $OPENSHIFT_MONGODB_DB_PASSWORD --db mvjsa --collection users --csv  --fields fname,lname,email,phone,sid,gender --out data.csv';
-  exec(command, function(err, stdout, stderr) {
-    if(err) {
-      res.send(err);
-    }
-    res.sendFile(path.join(__dirname,'..', 'data.csv'));
-  });
-});*/
+router.get('/userdata', function(req, res, next) {
+  if (req.user.email == "sameert234@gmail.com") { 
+    if(process.env.OPENSHIFT_MONGODB_DB_HOST)
+      command = 'mongoexport --host $OPENSHIFT_MONGODB_DB_HOST --username $OPENSHIFT_MONGODB_DB_USERNAME --password $OPENSHIFT_MONGODB_DB_PASSWORD --db site --collection users --data=csv  --fields fname,lname,email,phone,sid,gender --out data.csv';
+    exec(command, function(err, stdout, stderr) {
+      if(err) {
+        res.send(err);
+      }
+      res.sendFile(path.join(__dirname,'..', 'data.csv'));
+    });
+  }
+});
 
 //send new credentials to server
 router.post('/register', function whenRegister(req, res, next) {

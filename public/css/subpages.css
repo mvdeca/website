@@ -577,10 +577,36 @@ li{
     width: 100%;
 }
 
+.register-header {
+    font-family: 'Myriad-Pro';
+    color: black;
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 0.3px;
+    text-align: left;
+}
 
+.register-span-header {
+    font-family: 'Open Sans';
+    color: black;
+    font-weight: 500;
+    font-size: 38px;
+    letter-spacing: 0.3px;
+    text-align: left;
+}
 
+.register-paragraph {
+    font-family: 'Open Sans';
+    color: black;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    text-align: left;
+}
 
-
+.dropdown-content li>a, .dropdown-content li>span {
+    color: black;
+}
 
 
 

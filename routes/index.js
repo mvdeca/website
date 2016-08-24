@@ -32,9 +32,9 @@ router.get('/userdata', function(req, res, next) {
       command = 'mongoexport --host $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT --username $OPENSHIFT_MONGODB_DB_USERNAME --password $OPENSHIFT_MONGODB_DB_PASSWORD --db site --collection users --csv  --fields firstname,lastname,pfname,plname,pmail,email --out data.csv';
     exec(command, function(err, stdout, stderr) {
       if(err) {
-      res.send('data.csv');
+      res.send('/');
       }
-      res.send('data.csv');
+      res.redirect('/');
     });
   }
 });
@@ -44,7 +44,7 @@ router.post('/register', function whenRegister(req, res, next) {
   DB.createUser(req.body.pass, req.body.fname, req.body.lname, req.body.sid, req.body.em, req.body.mf, req.body.bday, req.body.gday, req.body.stat, req.body.cnum, req.body.text, req.body.shirt, req.body.pfn, req.body.pln, req.body.r, req.body.pm, req.body.pp, req.body.udate, req.body.addr, req.body.zcode);
   sendmail(req.body.em);
   console.log("user registering with"+req.body);
-  //res.redirect('/')
+  res.redirect('/')
 });
 
 //logout session kill route
@@ -64,6 +64,15 @@ router.get('/', function atHome (req, res, next) {
     res.render('index', {"loggedIn": false, "username" : "null"});
   }
 });
+
+/*router.get('/register3', function atHome (req, res, next) {
+  if (req.user) {
+    res.redirect('/');
+  }
+  else {
+    res.render('register3', {"loggedIn": false, "username" : "null"});
+  }
+});*/
 
 router.get('/bbc', function atHome (req, res, next) {
     res.sendFile(__dirname +'bbc/index.html');

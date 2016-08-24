@@ -1,82 +1,144 @@
 <% include partials/header %>
 <body>
 	<div class="container">
-		<div class="register-header">
-			<h1>Join Us</h1>
-			<p>All fields are required</p>		
+		<h1 class="register-header"> Join Monta Vista <span class="register-span-header">DECA </span></h1>
+		<p class="register-paragraph">Monta Vista DECA is filled with exciting confrences, competitions and community events. In order to get updates, sign up for events and receive other important information, please sign up below. 
+		<br><br> <span style="font-weight:400; letter-spacing:0.1px;"> All fields below are required. </span></p>
+
+		<div class="row">
+			<form class="col s12" id="registerForm">
+		        <div class="input-field col s6">
+		          <input id="fname" name="fname" type="text" class="validate">
+		          <label for="fname">First Name</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="lname" name="lname" type="text" class="validate">
+		          <label for="lname">Last Name</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="pass" name="pass" type="text" class="validate">
+		          <label for="pass">Password</label>
+		        </div>		       
+		        <div class="input-field col s6">
+		          <input id="cpass" name="cpass" type="text" class="validate">
+		          <label for="cpass">Confirm Password</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="em" name="em" type="text" class="validate">
+		          <label for="em">Email Address</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="sid" name="sid" type="text" class="validate">
+		          <label for="sid">Student ID</label>
+		        </div>	
+				<div class="input-field col s6">
+					<select>
+						<option value="" disabled selected>Gender</option>
+				      	<option value="male">Male</option>
+				      	<option value="female">Female</option>
+				    </select>
+				    <label>Gender</label>
+				</div>	        
+				<div class="input-field col s6">
+					<select id="grade">
+						<option value="" disabled selected>Grade</option>
+				      	<option value="9">9</option>
+				      	<option value="10">10</option>
+				      	<option value="11">11</option>
+				      	<option value="12">12</option>
+				    </select>
+				    <label>Grade</label>
+				</div>	  
+				<div class="input-field col s6">
+					<select id="shirt-size">
+						<option value="" disabled selected>Shirt Size</option>
+				      	<option value="small">Small</option>
+				      	<option value="medium">Medium</option>
+				      	<option value="large">Large</option>
+				    </select>
+				    <label>Shirt Size</label>
+				</div>	  
+				<div class="input-field col s6">
+					<select id="status">
+						<option value="" disabled selected>Membership Status</option>
+				      	<option value="returning">Returning</option>
+				      	<option value="new">New</option>
+				    </select>
+				    <label>Membership Status</label>
+				</div>	
+				<div class="input-field col s6">
+					<select id="text">
+						<option value="" disabled selected>Can You Text</option>
+				      	<option value="yes">Yes</option>
+				      	<option value="no">No</option>
+				    </select>
+				    <label>Can You Text</label>
+				</div>	
+		        <div class="input-field col s6">
+		          <input id="gday" name="gday" type="text" class="validate">
+		          <label for="gday">Graduation Year</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input placeholder="00/00/0000" id="bday" name="bday" type="text" class="validate">
+		          <label for="bday">Birthday</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input placeholder="(000)-000-0000" id="cnum" name="cnum" type="text" class="validate">
+		          <label for="cnum">Phone Number</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="pfname" name="pfname" type="text" class="validate">
+		          <label for="pfname">Parent's First Name</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="plname" name="plname" type="text" class="validate">
+		          <label for="plname">Parent's Last Name</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="pm" name="pm" type="text" class="validate">
+		          <label for="pm">Parent's Email</label>
+		        </div>		
+		        <div class="input-field col s6">
+		          <input id="pp" name="pp" type="text" class="validate">
+		          <label for="pp">Parent's Phone Number</label>
+		        </div>		
+				<div class="input-field col s6">
+					<select id="relationship">
+						<option value="" disabled selected>Relationship</option>
+				      	<option value="mother">Mother</option>
+				      	<option value="father">Father</option>
+				      	<option value="other">Other</option>
+				    </select>
+				    <label>Parent's Relationship</label>
+				</div>	
+				<div class="input-field col s6">
+					<select id="updates">
+						<option value="" disabled selected>Would They Like Updates?</option>
+				      	<option value="yes">Yes</option>
+				      	<option value="no">No</option>
+				    </select>
+				    <label>Would Your Parents Like Update?</label>
+				</div>		
+		        <div class="input-field col s6">
+		          <input placeholder="21840 McClellan Rd" id="addr" name="addr" type="text" class="validate">
+		          <label for="addr">Home Address</label>
+		        </div>			        
+		        <div class="input-field col s6">
+		          <input id="zcode" name="zcode" type="text" class="validate">
+		          <label for="zcode">Zip Code</label>
+		        </div>	
+				<button class="btn-large waves-effect waves-light col s12 z-depth-0" style="margin-top: 30px;" type="submit" name="action">Submit
+					<i class="material-icons right">send</i>
+				</button>	        
+			</form>
 		</div>
-	  <form id="registration-form" action="signup" method="post">
-	  	<div class="form-wrapper">
-	      <div class="row">
-	        <div class="input-field col m6 s12">
-	          <label for="fname">First Name</label>
-	          <input type="text" id="fname" name="fname" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="lname">Last Name</label>
-	          <input type="text" id="lname" name="lname" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="email">Email Address</label>
-	          <input type="text" id="email" name="email" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <select id="gender">
-	            <option value="male">Male</option>
-	            <option value="female">Female</option>
-	            <option value="other">Other</option>
-	          </select>
-	          <label for="gender">Gender</label>
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="grade">Student ID</label>
-	          <input type="text" id="sid" name="sid" maxlength="7">
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <select id="grade">
-	            <option value="9">9</option>
-	            <option value="10">10</option>
-	            <option value="11">11</option>
-	            <option value="12">12</option>
-	          </select>
-	          <label for="grade">Grade</label>
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <label for="dob1">Date of Birth</label>
-	          <input type="text" id="dob1" name="dob1" placeholder="MM" maxlength="2" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="dob2" name="dob2" placeholder="DD" maxlength="2" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="dob3" name="dob3" placeholder="YYYY" maxlength="4" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <label for="phone1">Phone Number</label>
-	          <input type="text" id="phone1" name="phone1" class="phone" placeholder="XXX" maxlength="3" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="phone2" name="phone2" class="phone" placeholder="XXX" maxlength="3" />
-	        </div>
-	        <div class="input-field col m2 s4">
-	          <input type="text" id="phone3" name="phone3" class="phone" placeholder="XXXX" maxlength="4" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="password">Password</label>
-	          <input type="password" id="password" name="password" />
-	        </div>
-	        <div class="input-field col m6 s12">
-	          <label for="confirm-password">Confirm Password</label>
-	          <input type="password" id="confirm-password" name="confirm-password" />
-	        </div>
-	      </div>
-	      <div class="row">
-	        <button class="btn btn-large submit col m6 offset-m6 s12 waves-effect" type="submit" id="submit" name="submit" value="Submit">
-	          SUBMIT <i class="material-icons right">send</i>
-	        </button>
-	      </div>
-	    </div>
-	  </form>
+	</div>
 	</div>
 </body>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
 </html>

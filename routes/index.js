@@ -39,6 +39,27 @@ router.get('/userdata', function(req, res, next) {
   }
 });
 
+router.get('/addHours', function(req, res, next){
+  if(req.user.email === "sameert234@gmail.com" || req.user.email === "alekhyap07@gmail.com" || req.user.email === "mahima031@gmail.com") {
+    res.render('hours');
+  } 
+})
+
+router.post('/addHours', function (req, res, next){
+  console.log(req.body);
+  var x = DB.updateHours(req.body.email, parseInt(req.body.hours));
+  setTimeout(function(){
+      User.findOne({student_id: req.body.email}, function (err, user){
+        if (user == null) {
+          res.render('successHours', {"response": "User does not exist"});
+        }
+        else {
+          res.render('successHours', {"response": user.hours+"is how many hours "+user.student_id + " or " +user.firstname+" "+user.lastname + "has"});
+        }
+      });     
+  },800);
+});
+
 //send new credentials to server
 router.post('/register', function whenRegister(req, res, next) {
   DB.createUser(req.body.pass, req.body.fname, req.body.lname, req.body.sid, req.body.em, req.body.mf, req.body.bday, req.body.gday, req.body.stat, req.body.cnum, req.body.text, req.body.shirt, req.body.pfn, req.body.pln, req.body.r, req.body.pm, req.body.pp, req.body.udate, req.body.addr, req.body.zcode);
@@ -120,7 +141,7 @@ router.get('/profile', function onCommunity (req, res, next) {
     res.render('profile', {"loggedIn": true, "username" : req.user.firstname, "user": req.user});
   }
   else {
-    res.render('profile', {"loggedIn": false, "username" : "null"});
+    res.redirect('/');
   }
 });
 

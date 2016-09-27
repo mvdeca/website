@@ -57,4 +57,19 @@ exports.createUser = function (pass, fname, lname, sid, em, mf, bday, gday, stat
 	});
 }
 
+exports.updateHours = function (id, numHours) {
+	return userSchema.findOne({student_id: id}, function (err,user){
+		if (err) console.log("something went wrong when finding the user");
+		if (user == null || user === null) return "non-existant user";
+		user.hours += numHours;
+		user.save(function (err){
+			if (err) console.log("something went wrong when saving the user");
+			console.log("The amount of hours the user has is " + user.hours);
+			console.log("--------------------------------------------------");
+		});
+		return user.hours+"is how many hours "+user.student_id+ " or " +user.firstname+" "+user.lastname + "has";
+	});
+}
+
+
 

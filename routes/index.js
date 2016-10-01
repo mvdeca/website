@@ -99,10 +99,6 @@ router.get('/bbc', function atHome (req, res, next) {
     res.sendFile(__dirname +'bbc/index.html');
 });
 
-router.get('/regpdf', function (req,res,next) {
-    res.sendFile(__dirname + '/registration.pdf');
-});
-
 router.get('/community', function onCommunity (req, res, next) {
     if (req.user) {
     res.render('community', {"loggedIn": true, "username" : req.user.firstname});

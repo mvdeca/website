@@ -47,7 +47,12 @@
 						<div class="join-subheader">
 							San Jose Airport Doubletree
 						</div>
-						<a class="btn waves-effect waves-light join-btn z-depth-0" href="https://mvdeca.typeform.com/to/Obd26d">ATTENDANCE CLOSED</a>
+						<% if (loggedIn == true) {%>
+							   	<a class="btn waves-effect waves-light teal accent-3 join-btn z-depth-0" href="https://mvdeca.typeform.com/to/Obd26d">REGISTER FOR LACE</a>
+						<% } %>
+						<% if (loggedIn != true) {%>
+							<a class="waves-effect waves-light btn teal accent-3 join-btn z-depth-0">SIGN IN TO REGISTER</a>
+						<% } %>
 					</div>		
 				</div>
 
@@ -69,7 +74,7 @@
 						<div class="join-subheader">
 							San Jose Convention Center
 						</div>
-						<a class="btn waves-effect waves-light join-btn z-depth-0" onclick="Materialize.toast('Maybe in a few days!', 4000)" >ATTENDANCE CLOSED</a>
+						<a class="btn red lighten-2 join-btn z-depth-0">ATTENDANCE CLOSED</a>
 					</div>		
 				</div>	
 	      	</div>
@@ -90,7 +95,7 @@
 						<div class="join-subheader">
 							San Diego, CA
 						</div>
-						<a class="btn waves-effect waves-light join-btn z-depth-0" onclick="Materialize.toast('Maybe in a few days!', 4000)" >ATTENDANCE CLOSED</a>
+						<a class="btn red lighten-2 join-btn z-depth-0">ATTENDANCE CLOSED</a>
 					</div>		
 				</div>	
 	      	</div>
@@ -111,7 +116,7 @@
 						<div class="join-subheader">
 							Anaheim, CA
 						</div>
-						<a class="btn waves-effect waves-light join-btn z-depth-0" onclick="Materialize.toast('Maybe in a few days!', 4000)" >ATTENDANCE CLOSED</a>
+						<a class="btn red lighten-2 join-btn z-depth-0">ATTENDANCE CLOSED</a>
 					</div>		
 				</div>	
 	      	</div>
@@ -132,7 +137,7 @@
 						<div class="join-subheader">
 							San Francisco
 						</div>
-						<a class="btn waves-effect waves-light join-btn z-depth-0" onclick="Materialize.toast('Maybe in a few days!', 4000)" >ATTENDANCE CLOSED</a>
+						<a class="btn red lighten-2 join-btn z-depth-0">ATTENDANCE CLOSED</a>
 					</div>		
 				</div>	
 	      	</div>
@@ -153,7 +158,7 @@
 						<div class="join-subheader">
 							San Francisco
 						</div>
-						<a class="btn waves-effect waves-light join-btn z-depth-0" onclick="Materialize.toast('Maybe in a few days!', 4000)" >ATTENDANCE CLOSED</a>
+						<a class="btn red lighten-2 join-btn z-depth-0">ATTENDANCE CLOSED</a>
 					</div>		
 				</div>	
 	      	</div>
@@ -174,7 +179,7 @@
 						<div class="join-subheader">
 							San Francisco
 						</div>
-						<a class="btn waves-effect waves-light join-btn z-depth-0" onclick="Materialize.toast('Maybe in a few days!', 4000)" >ATTENDANCE CLOSED</a>
+						<a class="btn red lighten-2 join-btn z-depth-0">ATTENDANCE CLOSED</a>
 					</div>		
 				</div>	
 	      	</div>
